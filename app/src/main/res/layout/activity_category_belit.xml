@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backsplash"
+    tools:context=".Category_belit">
+
+    <ImageView
+        android:id="@+id/imgnatnnnnnnnn"
+        android:layout_width="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:src="@drawable/matb"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"/>
+
+    <ImageView
+        android:id="@+id/aaaaaaaa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/bbbbbbbb"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/imgtable1"
+        android:layout_marginTop="60dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_toLeftOf="@+id/bbbbbbbb"
+       android:layout_below="@+id/imgnatnnnnnnnn"
+        android:src="@drawable/teketone"/>
+
+    <ImageView
+        android:id="@+id/imgtable2"
+        android:layout_marginTop="60dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+       android:layout_toRightOf="@+id/bbbbbbbb"
+        android:layout_below="@+id/imgnatnnnnnnnn"
+        android:src="@drawable/tikettow"/>
+
+    <ImageView
+        android:id="@+id/imgtable3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+       android:layout_toLeftOf="@+id/bbbbbbbb"
+        android:layout_below="@+id/aaaaaaaa"
+        android:src="@drawable/tikettree"/>
+
+    <ImageView
+        android:id="@+id/imgtable4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+       android:layout_toRightOf="@id/bbbbbbbb"
+        android:layout_below="@+id/aaaaaaaa"
+        android:src="@drawable/tiketfour"/>
+</RelativeLayout>
