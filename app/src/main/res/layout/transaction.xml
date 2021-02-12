@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cheep">
+
+    <ImageView
+        android:id="@+id/ssssssssss"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+       android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/sece"
+        />
+    <TextView
+        android:id="@+id/txttedadsece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_toRightOf="@+id/ssssssssss"
+        android:layout_marginTop="35dp"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:text="100"
+        />
+
+    <TextView
+        android:id="@+id/btnbuysece"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="30dp"
+        android:text="10$"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:gravity="center"
+        android:background="@drawable/back_text"
+        android:textSize="20dp"/>
+
+</RelativeLayout>

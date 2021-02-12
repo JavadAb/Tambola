@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/cheep"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgprofcheep"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/a2"
+        />
+
+    <TextView
+        android:id="@+id/txtnamecheep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgprofcheep"
+        android:layout_marginTop="35dp"
+        android:textSize="20dp"
+
+        android:textColor="#fff"
+        android:text="name"/>
+
+    <ImageView
+        android:id="@+id/sececheep"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/txtnamecheep"
+        android:layout_toRightOf="@+id/imgprofcheep"
+       android:layout_marginTop="10dp"
+        android:src="@drawable/sece"/>
+
+
+    <TextView
+        android:id="@+id/txtnumbersece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sececheep"
+        android:layout_below="@+id/txtnamecheep"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:text="1000"/>
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="90dp"
+        android:src="@drawable/medal"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tranaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgprofcheep"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="Transaction"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycheep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tranaction"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>

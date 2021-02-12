@@ -2,8 +2,9 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backsplash"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/backsplash">
+   >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -26,11 +27,11 @@
     <EditText
         android:id="@+id/edtname"
         android:layout_width="180dp"
-        android:layout_height="37dp"
+        android:layout_height="35dp"
       android:layout_gravity="center_horizontal"
        android:layout_marginTop="5dp"
         android:padding="5dp"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:background="@drawable/back_design"
         />
 
@@ -42,7 +43,7 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/a1"
+            android:src="@drawable/person"
             android:layout_marginTop="10dp"
             />
 
@@ -57,7 +58,7 @@
         <ImageView
             android:id="@+id/imggalery"
             android:layout_width="30dp"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
           android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             tools:ignore="NotSibling"
@@ -78,7 +79,7 @@
         <ImageView
             android:id="@+id/imgcamera"
             android:layout_width="30dp"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/imgprof"
             android:layout_toLeftOf="@+id/imgnoghte"
           android:layout_centerHorizontal="true"
@@ -92,11 +93,11 @@
         android:layout_width="60dp"
         android:layout_height="27dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         app:cardBackgroundColor="#2196F3"
         app:cardCornerRadius="2dp"
         android:padding="5dp">
-    <EditText
+    <TextView
         android:id="@+id/btnlogin"
         android:layout_width="55dp"
         android:layout_height="22dp"
@@ -115,7 +116,7 @@
 
    <RelativeLayout
        android:layout_width="match_parent"
-       android:layout_height="300dp"
+       android:layout_height="230dp"
        android:layout_alignParentBottom="true"
        android:background="@drawable/backrecyprofb"
       >
@@ -126,7 +127,7 @@
            android:id="@+id/recyprof"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:layout_margin="10dp"
+           android:layout_margin="5dp"
            android:scrollbars="vertical"
            />
 

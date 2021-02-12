@@ -6,7 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,20 +19,22 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 public class ChoosePlay extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
     private GoogleApiClient googleApiClient;
-    private static final int SIGN_ID=1;
+    private static final int SIGN_ID=10;
 
     SharedPreferences setting;
     SharedPreferences.Editor editor;
+    private String imagstring;
+    private String namestring;
+    SignInButton signInButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_play);
-
-
 
 
 //        setting.getString("dafe","")
@@ -36,16 +43,20 @@ public class ChoosePlay extends AppCompatActivity implements GoogleApiClient.OnC
         googleApiClient=new GoogleApiClient.Builder(this).enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
 
+        signInButton=(SignInButton)findViewById(R.id.googlesignid);
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent,SIGN_ID);
+
+            }
+        });
 
     }
 
     public void Playgues(View view) {
        startActivity(new Intent(ChoosePlay.this,Loginguse.class).putExtra("btn","gues"));
-    }
-
-    public void Gmail(View view) {
-        Intent intent=Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-        startActivityForResult(intent,SIGN_ID);
     }
 
     @Override
@@ -56,18 +67,11 @@ public class ChoosePlay extends AppCompatActivity implements GoogleApiClient.OnC
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-try {
-
         if (requestCode==SIGN_ID){
             GoogleSignInResult result=Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()){
-               startActivity(new Intent(ChoosePlay.this,Loginguse.class).putExtra("btnn","gmail"));
-                finish();
+                startActivity(new Intent(ChoosePlay.this,Loginguse.class).putExtra("btn","gmail"));
             }
-        }
-
-    }catch (Exception ex){
-
-
-    }
-}}
+}
+}
+}

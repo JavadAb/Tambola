@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    android:background="@drawable/backsplash"
+android:background="@drawable/backsplash"
     tools:context=".ChoosePlay">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
        android:src="@drawable/help"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -33,14 +34,11 @@
         android:text="play as gues"
         android:onClick="Playgues"/>
 
-    <Button
-        android:onClick="Gmail"
-        android:id="@+id/btngmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_below="@+id/btnplaygues"
-        android:textSize="11dp"
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="#0B268C"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:text="Login with Gmail"/>
+        android:layout_below="@+id/btnplaygues"
+        android:id="@+id/googlesignid"/>
 </RelativeLayout>

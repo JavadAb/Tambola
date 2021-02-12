@@ -20,8 +20,8 @@
     </androidx.cardview.widget.CardView>
     <ImageView
         android:id="@+id/imgprof4"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="25dp"
         android:src="@drawable/a2"/>
@@ -31,11 +31,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imgprof4"
-        android:text="name"
+        android:maxLength="7"
         android:layout_marginTop="35dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="3dp"
         android:textColor="#fff"
         android:textStyle="bold"
+        android:text="Elina"
         android:textSize="15dp"/>
 
     <TextView
@@ -44,9 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imgprof4"
         android:layout_below="@+id/txtnameprof"
-        android:text="level1"
+        android:text="lelel 1"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="3dp"
         android:textColor="#fff"
         android:textStyle="bold"
         android:textSize="15dp"/>
@@ -58,19 +59,22 @@
         android:drawableLeft="@drawable/sece"
         android:padding="5dp"
         android:layout_width="70dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/txtnameprof"
         android:layout_marginTop="45dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="3dp"
+        android:textColor="#fff"
+        android:gravity="left"
+        android:textSize="10dp"
         android:background="@drawable/textviewfour"/>
 
     <ImageView
         android:id="@+id/imgplasyelow"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:layout_toRightOf="@+id/txtnameprof"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/plasyelo"
         />
 
@@ -79,21 +83,25 @@
         android:padding="5dp"
         android:id="@+id/txtghalb"
         android:layout_width="70dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/txtsece"
         android:layout_marginTop="45dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="13dp"
+        android:textColor="#fff"
+        android:gravity="left"
+        android:textSize="10dp"
         android:background="@drawable/textviewfour"/>
 
     <ImageView
         android:id="@+id/imgplasgreen"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:layout_toRightOf="@+id/txtsece"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="39dp"
         android:src="@drawable/plasgreen"
         />
+
 
     <TextView
         android:padding="5dp"
@@ -101,19 +109,22 @@
         android:drawableLeft="@drawable/rade"
         android:drawablePadding="10dp"
         android:layout_width="70dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/txtghalb"
         android:layout_marginTop="45dp"
         android:layout_marginLeft="10dp"
+        android:textColor="#fff"
+        android:gravity="left"
+        android:textSize="10dp"
         android:background="@drawable/textviewfour"/>
 
     <ImageView
         android:id="@+id/imgplasblue"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:layout_toRightOf="@+id/txtghalb"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="39dp"
         android:src="@drawable/plasblue"
         />
 
@@ -126,21 +137,18 @@
         android:orientation="vertical">
 
         <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <ImageView
             android:id="@+id/imgplaysade"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
-
-            />
-
-        <ImageView
-            android:id="@+id/imgvasatpp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
-            android:src="@drawable/playsade"
+            android:src="@drawable/plasblueee"
             />
 
         <ImageView
@@ -148,34 +156,34 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/playparty"/>
+            android:src="@drawable/plasgreennnn"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
             <TextView
+                android:id="@+id/cheep"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:text="CHIPS"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/cheep"/>
+              android:layout_gravity="center_horizontal"
+                android:background="@drawable/btnsheet"/>
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:src="@drawable/jizb"
 
-                />
-        </RelativeLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/jaieze"
+        android:layout_width="180dp"
+        android:layout_height="300dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/jizb"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -188,31 +196,31 @@
 
     <ImageView
         android:id="@+id/share"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="22dp"
         android:layout_marginLeft="5dp"
         android:src="@drawable/share"/>
 
     <ImageView
         android:id="@+id/email"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/share"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="22dp"
         android:layout_marginLeft="5dp"
         android:src="@drawable/email"/>
 
     <ImageView
         android:id="@+id/video"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/email"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="22dp"
         android:layout_marginLeft="5dp"
         android:src="@drawable/video"/>
 </RelativeLayout>

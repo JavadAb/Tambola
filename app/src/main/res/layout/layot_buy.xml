@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bottomsh"
+
+    android:layout_height="match_parent">
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/backsplash"/>
+  <ImageView
+      android:id="@+id/asdfghj"
+      android:layout_width="180dp"
+      android:layout_height="60dp"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="30dp"
+      android:background="@drawable/mc"/>
+
+    <TextView
+        android:id="@+id/txtsecebuy"
+        android:layout_width="130dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/asdfghj"
+        android:drawableLeft="@drawable/sece"
+        android:padding="5dp"
+        android:drawablePadding="3dp"
+        android:background="@drawable/backtxtbuy"
+        />
+
+
+  <ImageView
+      android:id="@+id/qwqwqw"
+      android:layout_width="240dp"
+      android:layout_height="80dp"
+      android:layout_centerHorizontal="true"
+      android:layout_below="@+id/txtsecebuy"
+      android:layout_marginTop="100dp"
+      android:background="@drawable/bc"/>
+
+  <EditText
+      android:id="@+id/txtbuycoins"
+      android:layout_width="130dp"
+      android:layout_height="30dp"
+      android:layout_centerHorizontal="true"
+      android:layout_below="@+id/qwqwqw"
+      android:drawableLeft="@drawable/sece"
+      android:padding="5dp"
+      android:gravity="left"
+      android:background="@drawable/backtxtbuy"
+      />
+
+  <TextView
+      android:id="@+id/txtaddbuycoins"
+      android:layout_width="25dp"
+      android:layout_height="25dp"
+      android:layout_toRightOf="@+id/txtbuycoins"
+      android:layout_below="@+id/qwqwqw"
+      android:background="@drawable/backtxtbuy"
+      android:layout_marginTop="3dp"
+     android:drawableLeft="@drawable/add"
+      android:layout_marginLeft="10dp"/>
+
+  <ImageView
+      android:id="@+id/oioiioio"
+      android:layout_width="240dp"
+      android:layout_height="75dp"
+      android:layout_below="@+id/txtbuycoins"
+      android:layout_marginTop="20dp"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/cs"/>
+
+
+  <EditText
+      android:id="@+id/txtcoinsale"
+      android:layout_width="130dp"
+      android:layout_height="30dp"
+      android:layout_centerHorizontal="true"
+      android:layout_below="@+id/oioiioio"
+      android:drawableLeft="@drawable/sece"
+      android:padding="5dp"
+      android:gravity="left"
+      android:background="@drawable/backtxtbuy"
+      />
+
+  <TextView
+      android:id="@+id/txtnegcoinsale"
+      android:layout_width="25dp"
+      android:layout_height="25dp"
+      android:layout_toRightOf="@+id/txtcoinsale"
+      android:layout_below="@+id/oioiioio"
+      android:background="@drawable/backtxtbuy"
+      android:layout_marginTop="3dp"
+      android:drawableLeft="@drawable/ic_baseline_remove"
+      android:layout_marginLeft="10dp"/>
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:layout_below="@+id/txtcoinsale"/>
+</RelativeLayout>

@@ -11,16 +11,19 @@
         android:id="@+id/imgnatnnnnnnnn"
         android:layout_width="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"
-        android:src="@drawable/matb"
+        android:layout_height="30dp"
+        android:src="@drawable/tiketfor"
         android:layout_alignParentTop="true"
         android:layout_marginTop="30dp"/>
 
-    <ImageView
-        android:id="@+id/aaaaaaaa"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:text="Please Play in Level 1"
+        android:textColor="#B57300"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imgnatnnnnnnnn"/>
 
     <ImageView
         android:id="@+id/bbbbbbbb"
@@ -29,37 +32,58 @@
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"/>
 
+
     <ImageView
         android:id="@+id/imgtable1"
-        android:layout_marginTop="60dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_toLeftOf="@+id/bbbbbbbb"
        android:layout_below="@+id/imgnatnnnnnnnn"
-        android:src="@drawable/teketone"/>
+        android:src="@drawable/teketone"
+        android:layout_marginTop="40dp"/>
 
     <ImageView
         android:id="@+id/imgtable2"
-        android:layout_marginTop="60dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
        android:layout_toRightOf="@+id/bbbbbbbb"
         android:layout_below="@+id/imgnatnnnnnnnn"
+        android:layout_marginTop="40dp"
         android:src="@drawable/tikettow"/>
 
     <ImageView
         android:id="@+id/imgtable3"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="10dp"
        android:layout_toLeftOf="@+id/bbbbbbbb"
-        android:layout_below="@+id/aaaaaaaa"
+        android:layout_below="@+id/imgtable1"
         android:src="@drawable/tikettree"/>
 
     <ImageView
         android:id="@+id/imgtable4"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="10dp"
        android:layout_toRightOf="@id/bbbbbbbb"
-        android:layout_below="@+id/aaaaaaaa"
+        android:layout_below="@+id/imgtable2"
         android:src="@drawable/tiketfour"/>
+
+    <ImageView
+        android:id="@+id/imgtable5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/bbbbbbbb"
+        android:layout_below="@+id/imgtable3"
+        android:src="@drawable/blit5"/>
+
+    <ImageView
+        android:id="@+id/imgtable6"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/bbbbbbbb"
+        android:layout_below="@+id/imgtable4"
+        android:src="@drawable/blite6"/>
 </RelativeLayout>
