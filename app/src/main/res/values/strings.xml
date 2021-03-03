@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tambola</string>
+    <string name="crash_toast_text">error,please send it to my gmail</string>
 </resources>

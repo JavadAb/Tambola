@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Pay2">
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/pay2"
+        />
+
+
+    <TextView
+        android:id="@+id/edttransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:text="For buy Cheeps"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_margin="5dp"
+        android:gravity="left"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#AFAFAF"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:text="Amount:"/>
+        <TextView
+            android:id="@+id/txtamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:text="10"/>
+
+
+    </LinearLayout>
+
+   <TextView
+       android:id="@+id/txtpaypaytm"
+       android:layout_width="150dp"
+       android:layout_height="35dp"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginTop="30dp"
+       android:text="Pay with paytm"
+       android:gravity="center"
+       android:textColor="#fff"
+       android:textSize="17dp"
+       android:background="#3B913F"/>
+
+    <TextView
+        android:id="@+id/txtmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="17dp" />
+
+
+</LinearLayout>

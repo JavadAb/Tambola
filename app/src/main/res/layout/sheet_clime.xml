@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@drawable/btbtbtbt">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crderly"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="20dp"
+
+        >
+        <ImageView
+            android:id="@+id/erlyfive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           android:background="@drawable/erlyfive"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txterlyfive"
+            android:layout_width="50dp"
+            android:layout_height="15dp"
+           android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/clime"
+            android:layout_marginBottom="3dp"
+            android:gravity="left"
+            android:drawableLeft="@drawable/sece"
+           android:padding="2dp"
+            android:textSize="8dp"
+            android:textColor="#000"
+            />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtop"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+      android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+
+        >
+        <ImageView
+            android:id="@+id/topline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/topline"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txttopline"
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/clime"
+                android:layout_marginBottom="3dp"
+                android:gravity="left"
+                android:drawableLeft="@drawable/sece"
+                android:padding="2dp"
+                android:textSize="8dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdmidle"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+       android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+
+        >
+        <ImageView
+            android:id="@+id/midleline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/midleline"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtmidleline"
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/clime"
+                android:layout_marginBottom="3dp"
+                android:gravity="left"
+                android:drawableLeft="@drawable/sece"
+                android:padding="2dp"
+                android:textSize="8dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdbotom"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+
+        >
+        <ImageView
+            android:id="@+id/botomline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/botomline"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtbotomline"
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/clime"
+                android:layout_marginBottom="3dp"
+                android:gravity="left"
+                android:drawableLeft="@drawable/sece"
+                android:padding="2dp"
+                android:textSize="8dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdcorner"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+
+        >
+        <ImageView
+            android:id="@+id/corneline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cornerclime"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtcorneline"
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/clime"
+                android:layout_marginBottom="3dp"
+                android:gravity="left"
+                android:drawableLeft="@drawable/sece"
+                android:padding="2dp"
+                android:textSize="8dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdfull"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+
+        >
+        <ImageView
+            android:id="@+id/fullhome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fullhome"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtfullhome"
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/clime"
+                android:layout_marginBottom="3dp"
+                android:gravity="left"
+                android:drawableLeft="@drawable/sece"
+                android:padding="2dp"
+                android:textSize="8dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

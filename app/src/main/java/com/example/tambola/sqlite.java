@@ -30,11 +30,10 @@ public class sqlite extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + "Token" + " ("
                 + "Tok" +" TEXT);");
 
+
         db.execSQL("CREATE TABLE " + "Tokenbb" + " ("
                 + "Imagestring" + " TEXT , "
                 + "Namestring" +" TEXT);");
-
-
 
 
 

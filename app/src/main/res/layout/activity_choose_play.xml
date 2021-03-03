@@ -6,7 +6,9 @@
 
     android:layout_height="match_parent"
 android:background="@drawable/backsplash"
-    tools:context=".ChoosePlay">
+    tools:context=".ChoosePlay"
+    android:layoutDirection="ltr"
+    >
 
     <ImageView
         android:layout_width="55dp"
@@ -15,30 +17,23 @@ android:background="@drawable/backsplash"
        android:src="@drawable/help"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:id="@+id/imghelp"
         />
     <ImageView
         android:id="@+id/tambolaaa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
       android:src="@drawable/texttambola"
         />
 
-    <Button
-        android:id="@+id/btnplaygues"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tambolaaa"
-        android:layout_marginBottom="10dp"
-        android:text="play as gues"
-        android:onClick="Playgues"/>
+
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="#0B268C"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/btnplaygues"
+        android:layout_centerInParent="true"
         android:id="@+id/googlesignid"/>
 </RelativeLayout>

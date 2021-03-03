@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -28,12 +29,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -94,9 +100,13 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
    static ImageView prof;
     static ImageView gallery;
     static ImageView camera;
+    TextView txtname;
+    CardView cardvieww;
     TextView login;
     RecyclerView recyclerView_prof;
-
+    static final Integer WRITE_EXTERNAL_STORAGE=60;
+    static final Integer READ_EXTERNAL_STORAGE=22;
+    static final Integer CAMERA=33;
     SharedPreferences setting;
     SharedPreferences.Editor editor;
 
@@ -114,11 +124,12 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginguse);
 
-        Intent intent=getIntent();
-         play_gues=intent.getStringExtra("btn");
+//        Intent intent=getIntent();
+//         play_gues=intent.getStringExtra("btn");
 
 
-        Log.e("stuf", play_gues );
+
+
         Sqlitechild sqlitechild=new Sqlitechild(getApplicationContext());
 
         databaseHandler = new DatabaseHandler(Loginguse.this);
@@ -131,59 +142,50 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
         name=(EditText)findViewById(R.id.edtname);
 
         prof=(ImageView)findViewById(R.id.imgprof);
+        prof.setImageResource(R.drawable.a1);
+        pathimage=getpath2(R.drawable.a1);
         gallery=(ImageView)findViewById(R.id.imggalery);
         camera=(ImageView)findViewById(R.id.imgcamera);
 
         login=(TextView)findViewById(R.id.btnlogin);
-
+        cardvieww=(CardView)findViewById(R.id.cardvieww);
+        txtname=(TextView)findViewById(R.id.txtname);
+        startActivitys startActivitys=new startActivitys();
+        startActivitys.set(Loginguse.this,name,R.anim.animzoomin);
+        startActivitys.set(Loginguse.this,prof,R.anim.animzoomin);
+        startActivitys.set(Loginguse.this,gallery,R.anim.animzoomin);
+        startActivitys.set(Loginguse.this,camera,R.anim.animzoomin);
+        startActivitys.set(Loginguse.this,login,R.anim.animzoomin);
+        startActivitys.set(Loginguse.this,cardvieww,R.anim.animzoomin);
+        startActivitys.set(Loginguse.this,txtname,R.anim.animzoomin);
         FixRecycler();
 
         gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)    ==
-                            PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
-                            PackageManager.PERMISSION_DENIED){
-                        String[] permission={Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                        requestPermissions(permission,PERMISSSION_CODE);
-
-                    }else {
-                        pickimagefromgalery();
-                    }
-
-                }else {
-                    pickimagefromgalery();
-                }
+                startActivitys.set(Loginguse.this,gallery,R.anim.animzoomin);
+              pickimagefromgalery();
             }
         });
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    if (checkSelfPermission(Manifest.permission.CAMERA)    ==
-                            PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
-                            PackageManager.PERMISSION_DENIED){
-                        String[] permission={Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
-                        requestPermissions(permission,PERMISSSION_CODE2);
-
-                    }else {
-                        Camera();
-                    }
-
-                }else {
-                    Camera();
-                }
+                startActivitys.set(Loginguse.this,camera,R.anim.animzoomin);
+             Camera();
             }
         });
+
+        try {
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (play_gues.equals("gmail")){
 
+                    startActivitys.set(Loginguse.this,login,R.anim.animzoomin);
+                    startActivitys.set(Loginguse.this,cardvieww,R.anim.animzoomin);
                     Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
                         @Override
                         public void onResult(@NonNull Status status) {
@@ -194,14 +196,17 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
                                     Log.e("stuf", account.getDisplayName());
                                     Log.e("stuf", account.getEmail() );
                                     Log.e("stuf", account.getId());
+                                    Log.e("stuf", pathimage);
+
                                     if (!name.getText().toString().isEmpty()){
 
-                                        sqlitechild.insertdata("gmail");
+
 
 
                                         ProgressDialog dialog = new ProgressDialog(Loginguse.this);
                                         dialog.setMessage("Please wait..");
                                         dialog.show();
+
 
                                         try {
                                           new Thread(new Runnable() {
@@ -209,6 +214,8 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
                                               public void run() {
                                                   HttpClient httpclient=new DefaultHttpClient();
                                                   HttpPost httpPost=new HttpPost("Http://185.255.89.127:8081/apibazi/login/");
+
+                                                  Handler handler=new Handler(Looper.getMainLooper());
 
                                                   try {
                                                       MultipartEntity entity=new MultipartEntity();
@@ -219,9 +226,16 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
                                                           entity.addPart("gmailName",new StringBody(account.getDisplayName(),Charset.forName("UTF8")));
 
                                                       } catch (UnsupportedEncodingException e) {
-                                                          e.printStackTrace();
+                                                         handler.post(new Runnable() {
+                                                             @Override
+                                                             public void run() {
+                                                                 Log.e("stuf", "1" );
+                                                                 Toast.makeText(Loginguse.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                             }
+                                                         });
                                                       }
                                                       File file=new File(pathimage.toString());
+
                                                       FileBody fileBody=new FileBody(file);
                                                       entity.addPart("picture",fileBody);
                                                       httpPost.setEntity(entity);
@@ -230,35 +244,55 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
                                                       HttpResponse response=httpclient.execute(httpPost);
                                                       HttpEntity httpEntity=response.getEntity();
                                                       String _response=EntityUtils.toString(httpEntity); // content will be consume only once
-                                                      Log.e("stuf", _response);
                                                       try {
 
                                                           final JSONObject jObject=new JSONObject(_response);
-                                                        String status=jObject.getString("status");
-                                                          String token=jObject.getString("token");
-                                                          Log.e("stuf", jObject.getString("status") );
-                                                          Log.e("stuf", jObject.getString("token"));
+                                                        String status=jObject.optString("status");
+                                                          String token=jObject.optString("token");
+                                                          Log.e("stuf", jObject.optString("status") );
+                                                          Log.e("stuf", jObject.optString("token"));
 
                                                           if (status.equals("ok")){
-                                                              dialog.dismiss();
                                                               sqliten.inserttoken(token);
                                                               sqliten.insertimage_name(BitMapToString(drawableToBitmap(prof.getDrawable())),name.getText().toString());
                                                               startActivity(new Intent(Loginguse.this,Category_Main.class));
+                                                              sqlitechild.insertdata("gmail");
+                                                              dialog.dismiss();
                                                           }
 
 
                                                       }catch (JSONException e){
-                                                          Log.e("stuf", e.toString() );
+                                                          dialog.dismiss();
+                                                          handler.post(new Runnable() {
+                                                              @Override
+                                                              public void run() {
+                                                                  Log.e("stuf", "2" );
+                                                                  Toast.makeText(Loginguse.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                              }
+                                                          });
+
                                                       }
 
 
 
                                                   }catch (ClientProtocolException e){
-                                                      e.printStackTrace();
-                                                      Log.e("stuf", e.toString() );
+                                                      dialog.dismiss();
+                                                      handler.post(new Runnable() {
+                                                          @Override
+                                                          public void run() {
+                                                              Log.e("stuf", "3" );
+                                                              Toast.makeText(Loginguse.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                          }
+                                                      });
                                                   } catch (IOException e) {
-                                                      e.printStackTrace();
-                                                      Log.e("stuf", e.toString() );
+                                                      dialog.dismiss();
+                                                      handler.post(new Runnable() {
+                                                          @Override
+                                                          public void run() {
+                                                              Log.e("stuf", "4" );
+                                                              Toast.makeText(Loginguse.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                          }
+                                                      });
                                                   }
 
                                               }
@@ -276,10 +310,10 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
 
                                     }
                                     else {
-                                        Toast.makeText(Loginguse.this, "entername", Toast.LENGTH_SHORT).show();
+
                                     }
                                 }else {
-                                    startActivity(new Intent(Loginguse.this,ChoosePlay.class));
+                                    Toast.makeText(Loginguse.this, "is not success", Toast.LENGTH_SHORT).show();
                                 }
 
 
@@ -290,35 +324,27 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
 
 
                     });
-                }
-                else if (play_gues.equals("gues")){
-                    if (!name.getText().toString().isEmpty()){
-                        sqlite sqlite=new sqlite(getApplicationContext());
-                        sqlite.insertdata(BitMapToString(drawableToBitmap(prof.getDrawable())),name.getText().toString());
-                   Intent intent1=new Intent(Loginguse.this,Category_Main.class);
-                   startActivity(intent1);
 
 
-                }
-                }
+
 
 
             }
         });
-
+        }catch (Exception exception){
+            Toast.makeText(this, exception.toString(), Toast.LENGTH_SHORT).show();
+        }
 
     }
     private void Camera() {
-        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent, CAMERA_PICK);
+        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(takePicture, CAMERA_PICK);
        }
 
     private void pickimagefromgalery() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         // Start the Intent
         startActivityForResult(galleryIntent, IMAGE_PICK_CODE);
-
-
     }
 
     public void FixRecycler(){
@@ -340,13 +366,38 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
         RecyclerView recyclerViewgetcv=(RecyclerView)findViewById(R.id.recyprof);
         Adapter_profile  adapter = new Adapter_profile(arrayListimage,Loginguse.this);
         recyclerViewgetcv.setAdapter(adapter);
-
+        LayoutAnimationController animation =
+                AnimationUtils.loadLayoutAnimation(getApplicationContext(), R.anim.layout_animation_fall_down);
+        recyclerViewgetcv.setLayoutAnimation(animation);
 //                        new ItemTouchHelper(simpleCallback).attachToRecyclerView(recyclerViewgetcv);
         StaggeredGridLayoutManager gridLayoutManager=new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL);
         recyclerViewgetcv.setLayoutManager(gridLayoutManager);
 
     }
 
+
+    public  String getpath2(int R){
+        Bitmap bm = BitmapFactory.decodeResource( getResources(), R);
+        File file = new File(Environment.getExternalStorageDirectory(), "ic_launcher.PNG");
+        String path=file.getAbsolutePath();
+
+        FileOutputStream outStream = null;
+        try {
+            outStream = new FileOutputStream(file);
+            bm.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+            outStream.flush();
+            outStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (file.exists()){
+                Log.e("stuf", "onCreate: ");
+            }
+        }
+        return path;
+    }
 
     @Override
     protected void onStart() {
@@ -405,8 +456,15 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
         public void onBindViewHolder(final ViewHolder holder, final int position) {
             final CardView cardView = holder.cardViieeww;
 
+            startActivitys startActivitys=new startActivitys();
             ImageView imageView=(ImageView)cardView.findViewById(R.id.img_card_prof);
             imageView.setImageResource(Integer.parseInt(img.get(position)));
+//            imageView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    startActivitys.set(Loginguse.this,imageView,R.anim.animzoomin);
+//                }
+//            });
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -495,7 +553,7 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
         public int getItemCount() {
             return img.size();
         }
-        public String getpath(int R){
+        public  String getpath(int R){
             Bitmap bm = BitmapFactory.decodeResource( getResources(), R);
             File file = new File(Environment.getExternalStorageDirectory(), "ic_launcher.PNG");
             String path=file.getAbsolutePath();
@@ -524,48 +582,70 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if ( requestCode==IMAGE_PICK_CODE){
-            Uri selectedImageUri = data.getData();
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+        try {
 
-            // Get the cursor
-            Cursor cursor = getContentResolver().query(selectedImageUri,
-                    filePathColumn, null, null, null);
-            // Move to first row
-            cursor.moveToFirst();
+            if (requestCode == IMAGE_PICK_CODE){
+                Uri selectedImageUri = data.getData();
 
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-          pathimage = cursor.getString(columnIndex);
 
-            Log.e("stuf", pathimage.toString() );
-            cursor.close();
+                Bitmap bitmap=MediaStore.Images.Media.getBitmap(getContentResolver(),selectedImageUri);
 
-            prof.setImageURI(selectedImageUri);
-    }
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
-        if (requestCode==CAMERA_PICK){
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
+                // Get the cursor
+                Cursor cursor = getContentResolver().query(selectedImageUri,
+                        filePathColumn, null, null, null);
+                // Move to first row
+                cursor.moveToFirst();
 
-            Uri selectedImageUri = data.getData();
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                pathimage = cursor.getString(columnIndex);
 
-            // Get the cursor
-            Cursor cursor = getContentResolver().query(selectedImageUri,
-                    filePathColumn, null, null, null);
-            // Move to first row
-            cursor.moveToFirst();
+                Log.e("stuf", pathimage.toString() );
+                cursor.close();
 
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            pathimage= cursor.getString(columnIndex);
+               prof.setImageBitmap(bitmap);
+            }
+            if (requestCode == CAMERA_PICK ) {
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                prof.setImageBitmap(photo);
 
-            Log.e("stuf", pathimage.toString() );
-            cursor.close();
 
-            prof.setImageBitmap(photo);
 
+                // CALL THIS METHOD TO GET THE URI FROM THE BITMAP
+                Uri tempUri = getImageUri(getApplicationContext(), photo);
+                pathimage=getRealPathFromURI(tempUri);
+                // CALL THIS METHOD TO GET THE ACTUAL PATH
+                File finalFile = new File(getRealPathFromURI(tempUri));
+
+
+            }
+        }catch (Exception e){
+            Log.e("stuf", e.getMessage());
         }
 
+
 }
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    public String getRealPathFromURI(Uri uri) {
+        String path = "";
+        if (getContentResolver() != null) {
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            if (cursor != null) {
+                cursor.moveToFirst();
+                int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                path = cursor.getString(idx);
+                cursor.close();
+            }
+        }
+        return path;
+    }
 
     public static Bitmap drawableToBitmap (Drawable drawable) {
         Bitmap  bitmap = null;
@@ -613,7 +693,6 @@ public class Loginguse extends AppCompatActivity implements GoogleApiClient.OnCo
         String temp = Base64.encodeToString(b, Base64.DEFAULT);
         return temp;
     }
-
 
 
 

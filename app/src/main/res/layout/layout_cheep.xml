@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@drawable/cheep"
-    android:layout_height="wrap_content">
+    android:layoutDirection="ltr"
+    android:layout_height="250dp">
 
     <ImageView
         android:id="@+id/imgprofcheep"
@@ -46,7 +47,7 @@
         android:layout_marginTop="10dp"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:text="1000"/>
+       />
 
 
     <ImageView
@@ -65,15 +66,16 @@
         android:textColor="#fff"
         android:textSize="20dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
         android:text="Transaction"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycheep"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_below="@+id/tranaction"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
         android:layout_marginTop="5dp"/>
 
 </RelativeLayout>

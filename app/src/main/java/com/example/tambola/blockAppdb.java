@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class blockAppdb extends SQLiteOpenHelper {
-    private static final String DBName="myfoblockapp";
+    private static final String DBName="myfoblockappp";
     private static final int DBVersion=1;
     private  final String ID="id";
     private  final String js="js";

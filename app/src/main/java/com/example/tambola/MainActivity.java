@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -27,12 +28,23 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences setting;
     String pach;
+    ImageView imgfirst;
+
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+      //  Toast.makeText(this, String.valueOf(12/0), Toast.LENGTH_SHORT).show();
+        imgfirst=(ImageView)findViewById(R.id.imgfirst);
+        startActivitys startActivitys=new startActivitys();
+        startActivitys.set(MainActivity.this,imgfirst,R.anim.animzoomin);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivitys.set(MainActivity.this,imgfirst,R.anim.shake);
+            }
+        },1000);
 
 //        Log.e("stuf",  getpath(R.drawable.a2));
 

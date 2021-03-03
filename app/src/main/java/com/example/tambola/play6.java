@@ -21,7 +21,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+//
 //import com.github.nkzawa.emitter.Emitter;
 //import com.github.nkzawa.socketio.client.IO;
 //import com.github.nkzawa.socketio.client.Socket;
@@ -49,34 +49,44 @@ import java.util.Random;
 
 import tech.gusavila92.websocketclient.WebSocketClient;
 
-public class play4 extends AppCompatActivity {
+public class play6 extends AppCompatActivity {
     String am;
     boolean blite1=false;
     boolean blite2=false;
     boolean blite3=false;
     boolean blite4=false;
+    boolean blite5=false;
+    boolean blite6=false;
     startActivitys startActivitys;
     ArrayList<String> ticketNumber;
     JSONArray jsonlist;
-
     TextView tik,tedadcheeps;
-    TextView orang1_blite6,orang2_blite6,orang3_blite6,orang4_blite6;
-    ImageView imgpush,imgpush2,imgpush3,imgpush4;
+    ImageView imgpush,imgpush2,imgpush3,imgpush4,imgpush5,imgpush6;
+    TextView orang1_blite6,orang2_blite6,orang3_blite6,orang4_blite6,orang5_blite6,orang6_blite6;
+
     TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,txt9,txt10,txt11,txt12,txt13,txt14,txt15,txt16,txt17,txt18,txt19,txt20,txt21,txt22,txt23,txt24,txt25,txt26,txt27;
     TextView txt1b,txt2b,txt3b,txt4b,txt5b,txt6b,txt7b,txt8b,txt9b,txt10b,txt11b,txt12b,txt13b,txt14b,txt15b,txt16b,txt17b,txt18b,txt19b,txt20b,txt21b,txt22b,txt23b,txt24b,txt25b,txt26b,txt27b;
     TextView txt1c,txt2c,txt3c,txt4c,txt5c,txt6c,txt7c,txt8c,txt9c,txt10c,txt11c,txt12c,txt13c,txt14c,txt15c,txt16c,txt17c,txt18c,txt19c,txt20c,txt21c,txt22c,txt23c,txt24c,txt25c,txt26c,txt27c;
     TextView txt1d,txt2d,txt3d,txt4d,txt5d,txt6d,txt7d,txt8d,txt9d,txt10d,txt11d,txt12d,txt13d,txt14d,txt15d,txt16d,txt17d,txt18d,txt19d,txt20d,txt21d,txt22d,txt23d,txt24d,txt25d,txt26d,txt27d;
+    TextView txt1e,txt2e,txt3e,txt4e,txt5e,txt6e,txt7e,txt8e,txt9e,txt10e,txt11e,txt12e,txt13e,txt14e,txt15e,txt16e,txt17e,txt18e,txt19e,txt20e,txt21e,txt22e,txt23e,txt24e,txt25e,txt26e,txt27e;
+    TextView txt1g,txt2g,txt3g,txt4g,txt5g,txt6g,txt7g,txt8g,txt9g,txt10g,txt11g,txt12g,txt13g,txt14g,txt15g,txt16g,txt17g,txt18g,txt19g,txt20g,txt21g,txt22g,txt23g,txt24g,txt25g,txt26g,txt27g;
     private WebSocketClient webSocketClient=null;
 //    Socket socket;
     Handler handler;
-
-    TextView x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90;
-
 
     ArrayList<Integer> arrayList;
     ArrayList<Integer> arrayList2;
     ArrayList<Integer> arrayList3;
     ArrayList<Integer> arrayList4;
+    ArrayList<Integer> arrayList5;
+    ArrayList<Integer> arrayList6;
+
+    ArrayList<Object> arrayList_b;
+    ArrayList<Integer> arrayList2_b;
+    ArrayList<Integer> arrayList3_b;
+    ArrayList<Integer> arrayList4_b;
+    ArrayList<Integer> arrayList5_b;
+    ArrayList<Integer> arrayList6_b;
 
 
     ImageView play1,play2,play3,play4,load;
@@ -85,30 +95,40 @@ public class play4 extends AppCompatActivity {
     String corn1b,corn2b,corn3b,corn4b;
     String corn1c,corn2c,corn3c,corn4c;
     String corn1d,corn2d,corn3d,corn4d;
+    String corn1e,corn2e,corn3e,corn4e;
+    String corn1g,corn2g,corn3g,corn4g;
 
     String erly1,erly2,erly3,erly4,erly5;
     String erly1b,erly2b,erly3b,erly4b,erly5b;
     String erly1c,erly2c,erly3c,erly4c,erly5c;
     String erly1d,erly2d,erly3d,erly4d,erly5d;
+    String erly1e,erly2e,erly3e,erly4e,erly5e;
+    String erly1g,erly2g,erly3g,erly4g,erly5g;
 
     String a1,a2,a3,a4,a5,a6,a7,a8,a9;
     String a1b,a2b,a3b,a4b,a5b,a6b,a7b,a8b,a9b;
     String a1c,a2c,a3c,a4c,a5c,a6c,a7c,a8c,a9c;
     String a1d,a2d,a3d,a4d,a5d,a6d,a7d,a8d,a9d;
+    String a1e,a2e,a3e,a4e,a5e,a6e,a7e,a8e,a9e;
+    String a1g,a2g,a3g,a4g,a5g,a6g,a7g,a8g,a9g;
 
     String b1,b2,b3,b4,b5,b6,b7,b8,b9;
     String b1b,b2b,b3b,b4b,b5b,b6b,b7b,b8b,b9b;
     String b1c,b2c,b3c,b4c,b5c,b6c,b7c,b8c,b9c;
     String b1d,b2d,b3d,b4d,b5d,b6d,b7d,b8d,b9d;
+    String b1e,b2e,b3e,b4e,b5e,b6e,b7e,b8e,b9e;
+    String b1g,b2g,b3g,b4g,b5g,b6g,b7g,b8g,b9g;
+
     String token;
 
     String c1,c2,c3,c4,c5,c6,c7,c8,c9;
     String c1b,c2b,c3b,c4b,c5b,c6b,c7b,c8b,c9b;
     String c1c,c2c,c3c,c4c,c5c,c6c,c7c,c8c,c9c;
     String c1d,c2d,c3d,c4d,c5d,c6d,c7d,c8d,c9d;
+    String c1e,c2e,c3e,c4e,c5e,c6e,c7e,c8e,c9e;
+    String c1g,c2g,c3g,c4g,c5g,c6g,c7g,c8g,c9g;
 
     String adadfinal;
-
 
 
     JSONArray jsonArray;
@@ -138,55 +158,72 @@ public class play4 extends AppCompatActivity {
     ArrayList<Object> threeline_d;
     ArrayList<Object> corner_d;
 
+    ArrayList<Object> arrayList_blit5;
+    ArrayList<Object> firstline_e;
+    ArrayList<Object> secendlin_e;
+    ArrayList<Object> threeline_e;
+    ArrayList<Object> corner_e;
+
+    ArrayList<Object> arrayList_blit6;
+    ArrayList<Object> firstline_g;
+    ArrayList<Object> secendlin_g;
+    ArrayList<Object> threeline_g;
+    ArrayList<Object> corner_g;
 
     ArrayList<Object> trfirst_a;
     ArrayList<Object> trfirst_b;
     ArrayList<Object> trfirst_c;
     ArrayList<Object> trfirst_d;
+    ArrayList<Object> trfirst_e;
+    ArrayList<Object> trfirst_g;
 
     ArrayList<Object> trsecend_a;
     ArrayList<Object> trsecend_b;
     ArrayList<Object> trsecend_c;
     ArrayList<Object> trsecend_d;
-
+    ArrayList<Object> trsecend_e;
+    ArrayList<Object> trsecend_g;
 
     ArrayList<Object> trthree_a;
     ArrayList<Object> trthree_b;
     ArrayList<Object> trthree_c;
     ArrayList<Object> trthree_d;
-
+    ArrayList<Object> trthree_e;
+    ArrayList<Object> trthree_g;
 
     ArrayList<Object> tr_full_a;
     ArrayList<Object> tr_full_b;
     ArrayList<Object> tr_full_c;
     ArrayList<Object> tr_full_d;
-    boolean isadmin=false;
+    ArrayList<Object> tr_full_e;
+    ArrayList<Object> tr_full_g;
 
 
     ArrayList<Object> tr_corner_a;
     ArrayList<Object> tr_corner_b;
     ArrayList<Object> tr_corner_c;
     ArrayList<Object> tr_corner_d;
-
-    int ggg=0;
-
+    ArrayList<Object> tr_corner_e;
+    ArrayList<Object> tr_corner_g;
+    TextView x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90;
+    boolean isadmin=false;
     boolean startgame=false;
     private int delay=7000;
     String image;
     private String ticket;
     TextView txtcorner,txterly,txtfierstline,txtsecendline,txtthreeline,txtfull;
-     ImageView play5,play6;
-     String name;
-     ArrayList<Object> random;
-     ArrayList<Object> arrayList_b;
+    private ImageView play5,play6;
+    private String name;
+     ArrayList<String> random;
+     int ggg=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play4);
+        setContentView(R.layout.activity_play6);
 
-        tik=(TextView)findViewById(R.id.ttdddttdd4);
-        tedadcheeps=(TextView)findViewById(R.id.tiketzarb4);
+        tik=(TextView)findViewById(R.id.ttdddttdd6);
+        tedadcheeps=(TextView)findViewById(R.id.tiketzarb6);
 
         startActivitys=new startActivitys();
         ticketNumber=new ArrayList<String>();
@@ -282,6 +319,14 @@ public class play4 extends AppCompatActivity {
         x88=(TextView)findViewById(R.id.x88);
         x89=(TextView)findViewById(R.id.x89);
         x90=(TextView)findViewById(R.id.x90);
+        random=new ArrayList<>();
+
+        arrayList_b=new ArrayList<>();
+        arrayList2_b=new ArrayList<>();
+        arrayList3_b=new ArrayList<>();
+        arrayList4_b=new ArrayList<>();
+        arrayList5_b=new ArrayList<>();
+        arrayList6_b=new ArrayList<>();
 
 
 
@@ -289,56 +334,68 @@ public class play4 extends AppCompatActivity {
         tr_full_b=new ArrayList<>();
         tr_full_c=new ArrayList<>();
         tr_full_d=new ArrayList<>();
+        tr_full_e=new ArrayList<>();
+        tr_full_g=new ArrayList<>();
 
         trfirst_a=new ArrayList<>();
         trfirst_b=new ArrayList<>();
         trfirst_c=new ArrayList<>();
         trfirst_d=new ArrayList<>();
-
-        random=new ArrayList<>();
-
-        arrayList_b=new ArrayList<>();
+        trfirst_e=new ArrayList<>();
+        trfirst_g =new ArrayList<>();
 
         trsecend_a=new ArrayList<>();
         trsecend_b=new ArrayList<>();
         trsecend_c=new ArrayList<>();
         trsecend_d=new ArrayList<>();
+        trsecend_e=new ArrayList<>();
+        trsecend_g=new ArrayList<>();
 
         trthree_a=new ArrayList<>();
         trthree_b=new ArrayList<>();
         trthree_c=new ArrayList<>();
         trthree_d=new ArrayList<>();
+        trthree_e=new ArrayList<>();
+        trthree_g=new ArrayList<>();
 
         tr_corner_a=new ArrayList<>();
         tr_corner_b=new ArrayList<>();
         tr_corner_c=new ArrayList<>();
         tr_corner_d=new ArrayList<>();
+        tr_corner_e=new ArrayList<>();
+        tr_corner_g=new ArrayList<>();
+
 
         corner_a=new ArrayList<>();
         corner_b=new ArrayList<>();
         corner_c=new ArrayList<>();
         corner_d=new ArrayList<>();
-
+        corner_e=new ArrayList<>();
+        corner_g=new ArrayList<>();
 
         firstline_a=new ArrayList<>();
         firstline_b=new ArrayList<>();
         firstline_c=new ArrayList<>();
         firstline_d=new ArrayList<>();
-
+        firstline_e=new ArrayList<>();
+        firstline_g=new ArrayList<>();
 
         secendline_a=new ArrayList<>();
         secendlin_b=new ArrayList<>();
         secendlin_c=new ArrayList<>();
         secendlin_d=new ArrayList<>();
-
+        secendlin_e=new ArrayList<>();
+        secendlin_g=new ArrayList<>();
 
         threeline_a=new ArrayList<>();
         threeline_b=new ArrayList<>();
         threeline_c=new ArrayList<>();
         threeline_d=new ArrayList<>();
+        threeline_e=new ArrayList<>();
+        threeline_g=new ArrayList<>();
 
 
-        ProgressDialog dialogpross = new ProgressDialog(play4.this);
+        ProgressDialog dialogpross = new ProgressDialog(play6.this);
         dialogpross.setMessage("Please wait..");
         dialogpross.show();
         dialogpross.setCancelable(false);
@@ -361,29 +418,28 @@ public class play4 extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        txtcorner=(TextView)findViewById(R.id.txtwincorner6);
+        txterly=(TextView)findViewById(R.id.txtwinerlyfive6);
+        txtfierstline=(TextView)findViewById(R.id.txtwinfirstline6);
+        txtsecendline=(TextView)findViewById(R.id.txtwinsecendline6);
+        txtthreeline=(TextView)findViewById(R.id.txtwinthreline6);
+        txtfull=(TextView)findViewById(R.id.txtwinful5);
 
-        txtcorner=(TextView)findViewById(R.id.txtwincorner4);
-        txterly=(TextView)findViewById(R.id.txtwinerlyfive4);
-        txtfierstline=(TextView)findViewById(R.id.txtwinfirstline4);
-        txtsecendline=(TextView)findViewById(R.id.txtwinsecendline4);
-        txtthreeline=(TextView)findViewById(R.id.txtwinthreline4);
-        txtfull=(TextView)findViewById(R.id.txtwinful4);
+        adad=(TextView)findViewById(R.id.numbersite5);
 
-
-        adad=(TextView)findViewById(R.id.numbersite4);
-
-        play1=(ImageView)findViewById(R.id.player14);
-        play2=(ImageView)findViewById(R.id.player24);
-        play3=(ImageView)findViewById(R.id.player34);
-        play4=(ImageView)findViewById(R.id.player44);
-        play5=(ImageView)findViewById(R.id.player54);
-        play6 =(ImageView)findViewById(R.id.player64);
+        play1=(ImageView)findViewById(R.id.player16);
+        play2=(ImageView)findViewById(R.id.player26);
+        play3=(ImageView)findViewById(R.id.player36);
+        play4=(ImageView)findViewById(R.id.player46);
+        play5=(ImageView)findViewById(R.id.player56);
+        play6=(ImageView)findViewById(R.id.player66);
 
         arrayList_blit1=new ArrayList<>();
         arrayList_blit2=new ArrayList<>();
         arrayList_blit3=new ArrayList<>();
         arrayList_blit4=new ArrayList<>();
-
+        arrayList_blit5=new ArrayList<>();
+        arrayList_blit6=new ArrayList<>();
         try {
             SQLiteOpenHelper sqLiteOpenHelper=new sqlite(getApplicationContext());
             SQLiteDatabase db=sqLiteOpenHelper.getReadableDatabase();
@@ -434,7 +490,6 @@ public class play4 extends AppCompatActivity {
 
                 Handler handlertos=new Handler(Looper.getMainLooper());
 
-
                 JSONObject jsonObject= null;
                 JSONObject jso=null;
                 JSONObject jsonObject10=null;
@@ -464,7 +519,7 @@ public class play4 extends AppCompatActivity {
                         handlertos.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(play4.this, nm+" "+"Win erly five", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(play6.this, nm+" "+"Win erly five", Toast.LENGTH_SHORT).show();
                             }
                         });
                         checkwin();
@@ -482,7 +537,7 @@ public class play4 extends AppCompatActivity {
                         handlertos.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(play4.this, nm+" "+"Win top line", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(play6.this, nm+" "+"Win top line", Toast.LENGTH_SHORT).show();
                             }
                         });
                         checkwin();
@@ -500,7 +555,7 @@ public class play4 extends AppCompatActivity {
                         handlertos.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(play4.this, nm+" "+"Win midle line", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(play6.this, nm+" "+"Win midle line", Toast.LENGTH_SHORT).show();
                             }
                         });
                         checkwin();
@@ -518,7 +573,7 @@ public class play4 extends AppCompatActivity {
                         handlertos.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(play4.this, nm+" "+"Win botom line", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(play6.this, nm+" "+"Win botom line", Toast.LENGTH_SHORT).show();
                             }
                         });
                         checkwin();
@@ -537,7 +592,7 @@ public class play4 extends AppCompatActivity {
                         handlertos.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(play4.this, nm+" "+"Win corners", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(play6.this, nm+" "+"Win corners", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -556,7 +611,7 @@ public class play4 extends AppCompatActivity {
                         handlertos.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(play4.this, nm+" "+"Win full home", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(play6.this, nm+" "+"Win full home", Toast.LENGTH_SHORT).show();
                             }
                         });
                         checkwin();
@@ -577,10 +632,8 @@ public class play4 extends AppCompatActivity {
                             @Override
                             public void run() {
                                 adad.setText(adadfinal);
-                                startActivitys.set(com.example.tambola.play4.this,adad,R.anim.animzoomin);
+                                startActivitys.set(com.example.tambola.play6.this,adad,R.anim.animzoomin);
                                 // Stuff that updates the UI
-
-
 
 
                                 switch (adadfinal) {
@@ -869,7 +922,7 @@ public class play4 extends AppCompatActivity {
                 try {
 
                     if (jso.getString("message").equals(token+"  is admin")){
-                        isadmin=true;
+                      isadmin=true;
                     }
 
                     else if (jso.getString("message").equals("start")){
@@ -900,8 +953,9 @@ public class play4 extends AppCompatActivity {
                             });}
                     }
 
+
                     else if (jso.get("message").equals("Left Chat")){
-                        play4.this.finish();
+                        play6.this.finish();
                     }
 
                     if (startgame&&ggg==0){
@@ -940,6 +994,7 @@ public class play4 extends AppCompatActivity {
 
 
                     }
+
 
                 } catch (JSONException e) {
                     Log.e("kos545", e.toString() );
@@ -981,132 +1036,193 @@ public class play4 extends AppCompatActivity {
         arrayList2=new ArrayList<>();
         arrayList3=new ArrayList<>();
         arrayList4=new ArrayList<>();
-
-
-
-        txt1=(TextView)findViewById(R.id.txt1_blit4);
-        txt2=(TextView)findViewById(R.id.txt2_blit4);
-        txt3=(TextView)findViewById(R.id.txt3_blit4);
-        txt4=(TextView)findViewById(R.id.txt4_blit4);
-        txt5=(TextView)findViewById(R.id.txt5_blit4);
-        txt6=(TextView)findViewById(R.id.txt6_blit4);
-        txt7=(TextView)findViewById(R.id.txt7_blit4);
-        txt8=(TextView)findViewById(R.id.txt8_blit4);
-        txt9=(TextView)findViewById(R.id.txt9_blit4);
-        txt10=(TextView)findViewById(R.id.txt10_blit4);
-        txt11=(TextView)findViewById(R.id.txt11_blit4);
-        txt12=(TextView)findViewById(R.id.txt12_blit4);
-        txt13=(TextView)findViewById(R.id.txt13_blit4);
-        txt14=(TextView)findViewById(R.id.txt14_blit4);
-        txt15=(TextView)findViewById(R.id.txt15_blit4);
-        txt16=(TextView)findViewById(R.id.txt16_blit4);
-        txt17=(TextView)findViewById(R.id.txt17_blit4);
-        txt18=(TextView)findViewById(R.id.txt18_blit4);
-        txt19=(TextView)findViewById(R.id.txt19_blit4);
-        txt20=(TextView)findViewById(R.id.txt20_blit4);
-        txt21=(TextView)findViewById(R.id.txt21_blit4);
-        txt22=(TextView)findViewById(R.id.txt22_blit4);
-        txt23=(TextView)findViewById(R.id.txt23_blit4);
-        txt24=(TextView)findViewById(R.id.txt24_blit4);
-        txt25=(TextView)findViewById(R.id.txt25_blit4);
-        txt26=(TextView)findViewById(R.id.txt26_blit4);
-        txt27=(TextView)findViewById(R.id.txt27_blit4);
-
-
-        txt1b=(TextView)findViewById(R.id.txt1_blit4b);
-        txt2b=(TextView)findViewById(R.id.txt2_blit4b);
-        txt3b=(TextView)findViewById(R.id.txt3_blit4b);
-        txt4b=(TextView)findViewById(R.id.txt4_blit4b);
-        txt5b=(TextView)findViewById(R.id.txt5_blit4b);
-        txt6b=(TextView)findViewById(R.id.txt6_blit4b);
-        txt7b=(TextView)findViewById(R.id.txt7_blit4b);
-        txt8b=(TextView)findViewById(R.id.txt8_blit4b);
-        txt9b=(TextView)findViewById(R.id.txt9_blit4b);
-        txt10b=(TextView)findViewById(R.id.txt10_blit4b);
-        txt11b=(TextView)findViewById(R.id.txt11_blit4b);
-        txt12b=(TextView)findViewById(R.id.txt12_blit4b);
-        txt13b=(TextView)findViewById(R.id.txt13_blit4b);
-        txt14b=(TextView)findViewById(R.id.txt14_blit4b);
-        txt15b=(TextView)findViewById(R.id.txt15_blit4b);
-        txt16b=(TextView)findViewById(R.id.txt16_blit4b);
-        txt17b=(TextView)findViewById(R.id.txt17_blit4b);
-        txt18b=(TextView)findViewById(R.id.txt18_blit14b);
-        txt19b=(TextView)findViewById(R.id.txt19_blit4b);
-        txt20b=(TextView)findViewById(R.id.txt20_blit4b);
-        txt21b=(TextView)findViewById(R.id.txt21_blit4b);
-        txt22b=(TextView)findViewById(R.id.txt22_blit4b);
-        txt23b=(TextView)findViewById(R.id.txt23_blit4b);
-        txt24b=(TextView)findViewById(R.id.txt24_blit4b);
-        txt25b=(TextView)findViewById(R.id.txt25_blit4b);
-        txt26b=(TextView)findViewById(R.id.txt26_blit4b);
-        txt27b=(TextView)findViewById(R.id.txt27_blit4b);
-
-        txt1c=(TextView)findViewById(R.id.txt1_blit4c);
-        txt2c=(TextView)findViewById(R.id.txt2_blit4c);
-        txt3c=(TextView)findViewById(R.id.txt3_blit4c);
-        txt4c=(TextView)findViewById(R.id.txt4_blit4c);
-        txt5c=(TextView)findViewById(R.id.txt5_blit4c);
-        txt6c=(TextView)findViewById(R.id.txt6_blit4c);
-        txt7c=(TextView)findViewById(R.id.txt7_blit4c);
-        txt8c=(TextView)findViewById(R.id.txt8_blit4c);
-        txt9c=(TextView)findViewById(R.id.txt9_blit4c);
-        txt10c=(TextView)findViewById(R.id.txt10_blit4c);
-        txt11c=(TextView)findViewById(R.id.txt11_blit4c);
-        txt12c=(TextView)findViewById(R.id.txt12_blit4c);
-        txt13c=(TextView)findViewById(R.id.txt13_blit4c);
-        txt14c=(TextView)findViewById(R.id.txt14_blit4c);
-        txt15c=(TextView)findViewById(R.id.txt15_blit4c);
-        txt16c=(TextView)findViewById(R.id.txt16_blit4c);
-        txt17c=(TextView)findViewById(R.id.txt17_blit4c);
-        txt18c=(TextView)findViewById(R.id.txt18_blit4c);
-        txt19c=(TextView)findViewById(R.id.txt19_blit4c);
-        txt20c=(TextView)findViewById(R.id.txt20_blit4c);
-        txt21c=(TextView)findViewById(R.id.txt21_blit4c);
-        txt22c=(TextView)findViewById(R.id.txt22_blit4c);
-        txt23c=(TextView)findViewById(R.id.txt23_blit4c);
-        txt24c=(TextView)findViewById(R.id.txt24_blit4c);
-        txt25c=(TextView)findViewById(R.id.txt25_blit4c);
-        txt26c=(TextView)findViewById(R.id.txt26_blit4c);
-        txt27c=(TextView)findViewById(R.id.txt27_blit4c);
+        arrayList5=new ArrayList<>();
+        arrayList6=new ArrayList<>();
 
 
 
 
-        txt1d=(TextView)findViewById(R.id.txt1_blit4d);
-        txt2d=(TextView)findViewById(R.id.txt2_blit4d);
-        txt3d=(TextView)findViewById(R.id.txt3_blit4d);
-        txt4d=(TextView)findViewById(R.id.txt4_blit4d);
-        txt5d=(TextView)findViewById(R.id.txt5_blit4d);
-        txt6d=(TextView)findViewById(R.id.txt6_blit4d);
-        txt7d=(TextView)findViewById(R.id.txt7_blit4d);
-        txt8d=(TextView)findViewById(R.id.txt8_blit4d);
-        txt9d=(TextView)findViewById(R.id.txt9_blit4d);
-        txt10d=(TextView)findViewById(R.id.txt10_blit4d);
-        txt11d=(TextView)findViewById(R.id.txt11_blit4d);
-        txt12d=(TextView)findViewById(R.id.txt12_blit4d);
-        txt13d=(TextView)findViewById(R.id.txt13_blit4d);
-        txt14d=(TextView)findViewById(R.id.txt14_blit4d);
-        txt15d=(TextView)findViewById(R.id.txt15_blit4d);
-        txt16d=(TextView)findViewById(R.id.txt16_blit4d);
-        txt17d=(TextView)findViewById(R.id.txt17_blit4d);
-        txt18d=(TextView)findViewById(R.id.txt18_blit4d);
-        txt19d=(TextView)findViewById(R.id.txt19_blit4d);
-        txt20d=(TextView)findViewById(R.id.txt20_blit4d);
-        txt21d=(TextView)findViewById(R.id.txt21_blit4d);
-        txt22d=(TextView)findViewById(R.id.txt22_blit4d);
-        txt23d=(TextView)findViewById(R.id.txt23_blit4d);
-        txt24d=(TextView)findViewById(R.id.txt24_blit4d);
-        txt25d=(TextView)findViewById(R.id.txt25_blit4d);
-        txt26d=(TextView)findViewById(R.id.txt26_blit4d);
-        txt27d=(TextView)findViewById(R.id.txt27_blit4d);
+        txt1=(TextView)findViewById(R.id.txt1_blit6);
+        txt2=(TextView)findViewById(R.id.txt2_blit6);
+        txt3=(TextView)findViewById(R.id.txt3_blit6);
+        txt4=(TextView)findViewById(R.id.txt4_blit6);
+        txt5=(TextView)findViewById(R.id.txt5_blit6);
+        txt6=(TextView)findViewById(R.id.txt6_blit6);
+        txt7=(TextView)findViewById(R.id.txt7_blit6);
+        txt8=(TextView)findViewById(R.id.txt8_blit6);
+        txt9=(TextView)findViewById(R.id.txt9_blit6);
+        txt10=(TextView)findViewById(R.id.txt10_blit6);
+        txt11=(TextView)findViewById(R.id.txt11_blit6);
+        txt12=(TextView)findViewById(R.id.txt12_blit6);
+        txt13=(TextView)findViewById(R.id.txt13_blit6);
+        txt14=(TextView)findViewById(R.id.txt14_blit6);
+        txt15=(TextView)findViewById(R.id.txt15_blit6);
+        txt16=(TextView)findViewById(R.id.txt16_blit6);
+        txt17=(TextView)findViewById(R.id.txt17_blit6);
+        txt18=(TextView)findViewById(R.id.txt18_blit6);
+        txt19=(TextView)findViewById(R.id.txt19_blit6);
+        txt20=(TextView)findViewById(R.id.txt20_blit6);
+        txt21=(TextView)findViewById(R.id.txt21_blit6);
+        txt22=(TextView)findViewById(R.id.txt22_blit6);
+        txt23=(TextView)findViewById(R.id.txt23_blit6);
+        txt24=(TextView)findViewById(R.id.txt24_blit6);
+        txt25=(TextView)findViewById(R.id.txt25_blit6);
+        txt26=(TextView)findViewById(R.id.txt26_blit6);
+        txt27=(TextView)findViewById(R.id.txt27_blit6);
+
+
+        txt1b=(TextView)findViewById(R.id.txt1_blit6b);
+        txt2b=(TextView)findViewById(R.id.txt2_blit6b);
+        txt3b=(TextView)findViewById(R.id.txt3_blit6b);
+        txt4b=(TextView)findViewById(R.id.txt4_blit6b);
+        txt5b=(TextView)findViewById(R.id.txt5_blit6b);
+        txt6b=(TextView)findViewById(R.id.txt6_blit6b);
+        txt7b=(TextView)findViewById(R.id.txt7_blit6b);
+        txt8b=(TextView)findViewById(R.id.txt8_blit6b);
+        txt9b=(TextView)findViewById(R.id.txt9_blit6b);
+        txt10b=(TextView)findViewById(R.id.txt10_blit6b);
+        txt11b=(TextView)findViewById(R.id.txt11_blit6b);
+        txt12b=(TextView)findViewById(R.id.txt12_blit6b);
+        txt13b=(TextView)findViewById(R.id.txt13_blit6b);
+        txt14b=(TextView)findViewById(R.id.txt14_blit6b);
+        txt15b=(TextView)findViewById(R.id.txt15_blit6b);
+        txt16b=(TextView)findViewById(R.id.txt16_blit6b);
+        txt17b=(TextView)findViewById(R.id.txt17_blit6b);
+        txt18b=(TextView)findViewById(R.id.txt18_blit6b);
+        txt19b=(TextView)findViewById(R.id.txt19_blit6b);
+        txt20b=(TextView)findViewById(R.id.txt20_blit6b);
+        txt21b=(TextView)findViewById(R.id.txt21_blit6b);
+        txt22b=(TextView)findViewById(R.id.txt22_blit6b);
+        txt23b=(TextView)findViewById(R.id.txt23_blit6b);
+        txt24b=(TextView)findViewById(R.id.txt24_blit6b);
+        txt25b=(TextView)findViewById(R.id.txt25_blit6b);
+        txt26b=(TextView)findViewById(R.id.txt26_blit6b);
+        txt27b=(TextView)findViewById(R.id.txt27_blit6b);
+
+        txt1c=(TextView)findViewById(R.id.txt1_blit6c);
+        txt2c=(TextView)findViewById(R.id.txt2_blit6c);
+        txt3c=(TextView)findViewById(R.id.txt3_blit6c);
+        txt4c=(TextView)findViewById(R.id.txt4_blit6c);
+        txt5c=(TextView)findViewById(R.id.txt5_blit6c);
+        txt6c=(TextView)findViewById(R.id.txt6_blit6c);
+        txt7c=(TextView)findViewById(R.id.txt7_blit6c);
+        txt8c=(TextView)findViewById(R.id.txt8_blit6c);
+        txt9c=(TextView)findViewById(R.id.txt9_blit6c);
+        txt10c=(TextView)findViewById(R.id.txt10_blit6c);
+        txt11c=(TextView)findViewById(R.id.txt11_blit6c);
+        txt12c=(TextView)findViewById(R.id.txt12_blit6c);
+        txt13c=(TextView)findViewById(R.id.txt13_blit6c);
+        txt14c=(TextView)findViewById(R.id.txt14_blit6c);
+        txt15c=(TextView)findViewById(R.id.txt15_blit6c);
+        txt16c=(TextView)findViewById(R.id.txt16_blit6c);
+        txt17c=(TextView)findViewById(R.id.txt17_blit6c);
+        txt18c=(TextView)findViewById(R.id.txt18_blit6c);
+        txt19c=(TextView)findViewById(R.id.txt19_blit6c);
+        txt20c=(TextView)findViewById(R.id.txt20_blit6c);
+        txt21c=(TextView)findViewById(R.id.txt21_blit6c);
+        txt22c=(TextView)findViewById(R.id.txt22_blit6c);
+        txt23c=(TextView)findViewById(R.id.txt23_blit6c);
+        txt24c=(TextView)findViewById(R.id.txt24_blit6c);
+        txt25c=(TextView)findViewById(R.id.txt25_blit6c);
+        txt26c=(TextView)findViewById(R.id.txt26_blit6c);
+        txt27c=(TextView)findViewById(R.id.txt27_blit6c);
+
+
+
+
+        txt1d=(TextView)findViewById(R.id.txt1_blit6d);
+        txt2d=(TextView)findViewById(R.id.txt2_blit6d);
+        txt3d=(TextView)findViewById(R.id.txt3_blit6d);
+        txt4d=(TextView)findViewById(R.id.txt4_blit6d);
+        txt5d=(TextView)findViewById(R.id.txt5_blit6d);
+        txt6d=(TextView)findViewById(R.id.txt6_blit6d);
+        txt7d=(TextView)findViewById(R.id.txt7_blit6d);
+        txt8d=(TextView)findViewById(R.id.txt8_blit6d);
+        txt9d=(TextView)findViewById(R.id.txt9_blit6d);
+        txt10d=(TextView)findViewById(R.id.txt10_blit6d);
+        txt11d=(TextView)findViewById(R.id.txt11_blit6d);
+        txt12d=(TextView)findViewById(R.id.txt12_blit6d);
+        txt13d=(TextView)findViewById(R.id.txt13_blit6d);
+        txt14d=(TextView)findViewById(R.id.txt14_blit6d);
+        txt15d=(TextView)findViewById(R.id.txt15_blit6d);
+        txt16d=(TextView)findViewById(R.id.txt16_blit6d);
+        txt17d=(TextView)findViewById(R.id.txt17_blit6d);
+        txt18d=(TextView)findViewById(R.id.txt18_blit6d);
+        txt19d=(TextView)findViewById(R.id.txt19_blit6d);
+        txt20d=(TextView)findViewById(R.id.txt20_blit6d);
+        txt21d=(TextView)findViewById(R.id.txt21_blit6d);
+        txt22d=(TextView)findViewById(R.id.txt22_blit6d);
+        txt23d=(TextView)findViewById(R.id.txt23_blit6d);
+        txt24d=(TextView)findViewById(R.id.txt24_blit6d);
+        txt25d=(TextView)findViewById(R.id.txt25_blit6d);
+        txt26d=(TextView)findViewById(R.id.txt26_blit6d);
+        txt27d=(TextView)findViewById(R.id.txt27_blit6d);
+
+
+
+        txt1e=(TextView)findViewById(R.id.txt1_blit6e);
+        txt2e=(TextView)findViewById(R.id.txt2_blit6e);
+        txt3e=(TextView)findViewById(R.id.txt3_blit6e);
+        txt4e=(TextView)findViewById(R.id.txt4_blit6e);
+        txt5e=(TextView)findViewById(R.id.txt5_blit6e);
+        txt6e=(TextView)findViewById(R.id.txt6_blit6e);
+        txt7e=(TextView)findViewById(R.id.txt7_blit6e);
+        txt8e=(TextView)findViewById(R.id.txt8_blit6e);
+        txt9e=(TextView)findViewById(R.id.txt9_blit6e);
+        txt10e=(TextView)findViewById(R.id.txt10_blit6e);
+        txt11e=(TextView)findViewById(R.id.txt11_blit6e);
+        txt12e=(TextView)findViewById(R.id.txt12_blit6e);
+        txt13e=(TextView)findViewById(R.id.txt13_blit6e);
+        txt14e=(TextView)findViewById(R.id.txt14_blit6e);
+        txt15e=(TextView)findViewById(R.id.txt15_blit6e);
+        txt16e=(TextView)findViewById(R.id.txt16_blit6e);
+        txt17e=(TextView)findViewById(R.id.txt17_blit6e);
+        txt18e=(TextView)findViewById(R.id.txt18_blit6e);
+        txt19e=(TextView)findViewById(R.id.txt19_blit6e);
+        txt20e=(TextView)findViewById(R.id.txt20_blit6e);
+        txt21e=(TextView)findViewById(R.id.txt21_blit6e);
+        txt22e=(TextView)findViewById(R.id.txt22_blit6e);
+        txt23e=(TextView)findViewById(R.id.txt23_blit6e);
+        txt24e=(TextView)findViewById(R.id.txt24_blit6e);
+        txt25e=(TextView)findViewById(R.id.txt25_blit6e);
+        txt26e=(TextView)findViewById(R.id.txt26_blit6e);
+        txt27e=(TextView)findViewById(R.id.txt27_blit6e);
+
+
+        txt1g=(TextView)findViewById(R.id.txt1_blit6g);
+        txt2g=(TextView)findViewById(R.id.txt2_blit6g);
+        txt3g=(TextView)findViewById(R.id.txt3_blit6g);
+        txt4g=(TextView)findViewById(R.id.txt4_blit6g);
+        txt5g=(TextView)findViewById(R.id.txt5_blit6g);
+        txt6g=(TextView)findViewById(R.id.txt6_blit6g);
+        txt7g=(TextView)findViewById(R.id.txt7_blit6g);
+        txt8g=(TextView)findViewById(R.id.txt8_blit6g);
+        txt9g=(TextView)findViewById(R.id.txt9_blit6g);
+        txt10g=(TextView)findViewById(R.id.txt10_blit6g);
+        txt11g=(TextView)findViewById(R.id.txt11_blit6g);
+        txt12g=(TextView)findViewById(R.id.txt12_blit6g);
+        txt13g=(TextView)findViewById(R.id.txt13_blit6g);
+        txt14g=(TextView)findViewById(R.id.txt14_blit6g);
+        txt15g=(TextView)findViewById(R.id.txt15_blit6g);
+        txt16g=(TextView)findViewById(R.id.txt16_blit6g);
+        txt17g=(TextView)findViewById(R.id.txt17_blit6g);
+        txt18g=(TextView)findViewById(R.id.txt18_blit6g);
+        txt19g=(TextView)findViewById(R.id.txt19_blit6g);
+        txt20g=(TextView)findViewById(R.id.txt20_blit6g);
+        txt21g=(TextView)findViewById(R.id.txt21_blit6g);
+        txt22g=(TextView)findViewById(R.id.txt22_blit6g);
+        txt23g=(TextView)findViewById(R.id.txt23_blit6g);
+        txt24g=(TextView)findViewById(R.id.txt24_blit6g);
+        txt25g=(TextView)findViewById(R.id.txt25_blit6g);
+        txt26g=(TextView)findViewById(R.id.txt26_blit6g);
+        txt27g=(TextView)findViewById(R.id.txt27_blit6g);
 
 
 
 
 
 
-
-        int ticketNo=4;
+        int ticketNo=6;
         int i=0;
         while (i<3*ticketNo){
             ArrayList<String> adad=new ArrayList<String>();
@@ -1300,12 +1416,122 @@ public class play4 extends AppCompatActivity {
 
 
 
+        corn1e=txt1e.getText().toString();
+        corn2e=txt9e.getText().toString();
+        corn3e=txt19e.getText().toString();
+        corn4e=txt27e.getText().toString();
+
+        erly1e=txt1e.getText().toString();
+        erly2e=txt2e.getText().toString();
+        erly3e=txt3e.getText().toString();
+        erly4e=txt4e.getText().toString();
+        erly5e=txt5e.getText().toString();
+
+        a1e=txt1e.getText().toString();
+        a2e=txt2e.getText().toString();
+        a3e=txt3e.getText().toString();
+        a4e=txt4e.getText().toString();
+        a5e=txt5e.getText().toString();
+        a6e=txt6e.getText().toString();
+        a7e=txt7e.getText().toString();
+        a8e=txt8e.getText().toString();
+        a9e=txt9e.getText().toString();
+
+        b1e=txt10e.getText().toString();
+        b2e=txt11e.getText().toString();
+        b3e=txt12e.getText().toString();
+        b4e=txt13e.getText().toString();
+        b5e=txt14e.getText().toString();
+        b6e=txt15e.getText().toString();
+        b7e=txt16e.getText().toString();
+        b8e=txt17e.getText().toString();
+        b9e=txt18e.getText().toString();
+
+        c1e=txt19e.getText().toString();
+        c2e=txt20e.getText().toString();
+        c3e=txt21e.getText().toString();
+        c4e=txt22e.getText().toString();
+        c5e=txt23e.getText().toString();
+        c6e=txt24e.getText().toString();
+        c7e=txt25e.getText().toString();
+        c8e=txt26e.getText().toString();
+        c9e=txt27e.getText().toString();
+
+
+
+
+        corn1g=txt1g.getText().toString();
+        corn2g=txt9g.getText().toString();
+        corn3g=txt19g.getText().toString();
+        corn4g=txt27g.getText().toString();
+
+        erly1g=txt1g.getText().toString();
+        erly2g=txt2g.getText().toString();
+        erly3g=txt3g.getText().toString();
+        erly4g=txt4g.getText().toString();
+        erly5g=txt5g.getText().toString();
+
+        a1g=txt1g.getText().toString();
+        a2g=txt2g.getText().toString();
+        a3g=txt3g.getText().toString();
+        a4g=txt4g.getText().toString();
+        a5g=txt5g.getText().toString();
+        a6g=txt6g.getText().toString();
+        a7g=txt7g.getText().toString();
+        a8g=txt8g.getText().toString();
+        a9g=txt9g.getText().toString();
+
+        b1g=txt10g.getText().toString();
+        b2g=txt11g.getText().toString();
+        b3g=txt12g.getText().toString();
+        b4g=txt13g.getText().toString();
+        b5g=txt14g.getText().toString();
+        b6g=txt15g.getText().toString();
+        b7g=txt16g.getText().toString();
+        b8g=txt17g.getText().toString();
+        b9g=txt18g.getText().toString();
+
+        c1g=txt19g.getText().toString();
+        c2g=txt20g.getText().toString();
+        c3g=txt21g.getText().toString();
+        c4g=txt22g.getText().toString();
+        c5g=txt23g.getText().toString();
+        c6g=txt24g.getText().toString();
+        c7g=txt25g.getText().toString();
+        c8g=txt26g.getText().toString();
+        c9g=txt27g.getText().toString();
 
 //
 //        Random randd = new Random();
 //        Random rand2 = new Random();
+//        int cca1=rand2.nextInt(90)+1;
+//        txt1.setText(String.valueOf(cca1));
+//        firstline_a.add(cca1);
+//        corner_a.add(cca1);
+//        arrayList.contains(1);
 //
+//        int cca9=rand2.nextInt(90)+1;
+//        txt9.setText(String.valueOf(cca9));
+//        firstline_a.add(cca9);
+//        corner_a.add(cca9);
+//        arrayList.contains(9);
 //
+//        int cca19=rand2.nextInt(90)+1;
+//        txt19.setText(String.valueOf(cca19));
+//        secendline_a.add(cca19);
+//        corner_a.add(cca19);
+//        arrayList.contains(19);
+//
+//        int cca27=rand2.nextInt(90)+1;
+//        txt27.setText(String.valueOf(cca27));
+//        threeline_a.add(cca27);
+//        corner_a.add(cca27);
+//        arrayList.contains(27);
+
+
+
+
+
 //        int i=0;
 //        while (i<15){
 //            int value=randd.nextInt(27)+1;
@@ -1822,6 +2048,261 @@ public class play4 extends AppCompatActivity {
 //
 //
 //
+//
+//
+//
+//        int i5=0;
+//        while (i5<15){
+//            int value5=randd.nextInt(27)+1;
+//            if (arrayList5.contains(value5)){
+//
+//            }else {
+//                arrayList5.add(value5);
+//                switch (value5){
+//                    case 1:
+//                        getrandomnumber_b(txt1e);
+//                        firstline_e.add(value5);
+//                        corner_e.add(value5);
+//                        break;
+//                    case 2:
+//                        getrandomnumber_b(txt2e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 3:
+//                        getrandomnumber_b(txt3e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 4:
+//                        getrandomnumber_b(txt4e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 5:
+//                        getrandomnumber_b(txt5e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 6:
+//                        getrandomnumber_b(txt6e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 7:
+//                        getrandomnumber_b(txt7e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 8:
+//                        getrandomnumber_b(txt8e);
+//                        firstline_e.add(value5);
+//                        break;
+//                    case 9:
+//                        getrandomnumber_b(txt9e);
+//                        firstline_e.add(value5);
+//                        corner_e.add(value5);
+//                        break;
+//                    case 10:
+//                        getrandomnumber_b(txt10e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 11:
+//                        getrandomnumber_b(txt11e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 12:
+//                        getrandomnumber_b(txt12e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 13:
+//                        getrandomnumber_b(txt13e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 14:
+//                        getrandomnumber_b(txt14e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 15:
+//                        getrandomnumber_b(txt15e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 16:
+//                        getrandomnumber_b(txt16e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 17:
+//                        getrandomnumber_b(txt17e);
+//                        secendlin_e.add(value5);
+//                        break;
+//                    case 18:
+//                        getrandomnumber_b(txt18e);
+//                        secendlin_e.add(value5);
+//
+//                        break;
+//                    case 19:
+//                        getrandomnumber_b(txt19e);
+//                        threeline_e.add(value5);
+//                        corner_e.add(value5);
+//                        break;
+//                    case 20:
+//                        getrandomnumber_b(txt20e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 21:
+//                        getrandomnumber_b(txt21e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 22:
+//                        getrandomnumber_b(txt22e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 23:
+//                        getrandomnumber_b(txt23e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 24:
+//                        getrandomnumber_b(txt24e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 25:
+//                        getrandomnumber_b(txt25e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 26:
+//                        getrandomnumber_b(txt26e);
+//                        threeline_e.add(value5);
+//                        break;
+//                    case 27:
+//                        getrandomnumber_b(txt27e);
+//                        threeline_e.add(value5);
+//                        corner_e.add(value5);
+//                        break;
+//                }
+//                i5++;
+//            }
+//        }
+//
+//
+//
+//        int i6=0;
+//        while (i6<15){
+//            int value6=randd.nextInt(27)+1;
+//            if (arrayList6.contains(value6)){
+//
+//            }else {
+//                arrayList6.add(value6);
+//                switch (value6){
+//                    case 1:
+//                        getrandomnumber_b(txt1g);
+//                        firstline_g.add(value6);
+//                        corner_g.add(value6);
+//                        break;
+//                    case 2:
+//                        getrandomnumber_b(txt2g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 3:
+//                        getrandomnumber_b(txt3g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 4:
+//                        getrandomnumber_b(txt4g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 5:
+//                        getrandomnumber_b(txt5g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 6:
+//                        getrandomnumber_b(txt6g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 7:
+//                        getrandomnumber_b(txt7g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 8:
+//                        getrandomnumber_b(txt8g);
+//                        firstline_g.add(value6);
+//                        break;
+//                    case 9:
+//                        getrandomnumber_b(txt9g);
+//                        firstline_g.add(value6);
+//                        corner_g.add(value6);
+//                        break;
+//                    case 10:
+//                        getrandomnumber_b(txt10g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 11:
+//                        getrandomnumber_b(txt11g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 12:
+//                        getrandomnumber_b(txt12g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 13:
+//                        getrandomnumber_b(txt13g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 14:
+//                        getrandomnumber_b(txt14g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 15:
+//                        getrandomnumber_b(txt15g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 16:
+//                        getrandomnumber_b(txt16g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 17:
+//                        getrandomnumber_b(txt17g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 18:
+//                        getrandomnumber_b(txt18g);
+//                        secendlin_g.add(value6);
+//                        break;
+//                    case 19:
+//                        getrandomnumber_b(txt19g);
+//                        threeline_g.add(value6);
+//                        corner_g.add(value6);
+//                        break;
+//                    case 20:
+//                        getrandomnumber_b(txt20g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 21:
+//                        getrandomnumber_b(txt21g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 22:
+//                        getrandomnumber_b(txt22g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 23:
+//                        getrandomnumber_b(txt23g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 24:
+//                        getrandomnumber_b(txt24g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 25:
+//                        getrandomnumber_b(txt25g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 26:
+//                        getrandomnumber_b(txt26g);
+//                        threeline_g.add(value6);
+//                        break;
+//                    case 27:
+//                        getrandomnumber_b(txt27g);
+//                        threeline_g.add(value6);
+//                        corner_g.add(value6);
+//                        break;
+//                }
+//                i6++;
+//            }
+//        }
 
 
 
@@ -3463,23 +3944,879 @@ public class play4 extends AppCompatActivity {
 
 
 
-        imgpush=(ImageView)findViewById(R.id.imgpushing1_lite4);
-        imgpush2=(ImageView)findViewById(R.id.imgpushing2_lite4);
-        imgpush3=(ImageView)findViewById(R.id.imgpushing3_lite4);
-        imgpush4=(ImageView)findViewById(R.id.imgpushing4_blite4);
+
+
+        txt1e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a1e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(1);
+                        txt1e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                        Log.e("stuf", "nis" );
+                    }
+                }
+
+            }
+        });
+        txt2e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a2e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(2);
+                        txt2e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt3e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a3e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(3);
+                        txt3e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt4e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a4e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(4);
+                        txt4e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt5e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a5e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(5);
+                        txt5e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt6e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a6e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(6);
+                        txt6e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt7e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a7e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(7);
+                        txt7e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt8e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a8e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(8);
+                        txt8e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt9e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (a9e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(9);
+                        txt9e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt10e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b1e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(10);
+                        txt10e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt11e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b2e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(11);
+                        txt11e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
+        });
+        txt12e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b3e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(12);
+                        txt12e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
+        });
+        txt13e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b4e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(13);
+                        txt13e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt14e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b5e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(14);
+                        txt14e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt15e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b6e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(15);
+                        txt15e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt16e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b7e.equals(adad.getText().toString())){
+
+                        arrayList_blit4.add(16);
+                        txt16e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt17e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b8e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(17);
+                        txt17e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt18e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (b9e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(18);
+                        txt18e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt19e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c1e.equals(adad.getText().toString())){
+
+                        arrayList_blit5.add(19);
+                        txt19e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt20e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c2e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(20);
+                        txt20e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt21e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c3e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(21);
+                        txt21e.setBackgroundResource(R.drawable.pushing);
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt22e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c4e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(22);
+                        txt22e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+
+        txt23e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c5e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(23);
+                        txt23e.setText("");
+                        txt23e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt24e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c6e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(24);
+                        txt24e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
+        });
+        txt25e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c7e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(25);
+                        txt25e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt26e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c8e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(26);
+                        txt26e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt27e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite5==false){
+                    if (c9e.equals(adad.getText().toString())){
+                        arrayList_blit5.add(27);
+                        txt27e.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
 
 
 
 
-        orang1_blite6=(TextView)findViewById(R.id.orang_1_blite4);
-        orang2_blite6=(TextView)findViewById(R.id.orang_2_blite4);
-        orang3_blite6=(TextView)findViewById(R.id.orang_3_blite4);
-        orang4_blite6=(TextView)findViewById(R.id.orang_4_blite4);
+
+
+
+        txt1g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+
+                    if (a1g.equals(adadfinal)){
+                        arrayList_blit6.add(1);
+                        txt1g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                        Log.e("stuf", "nis" );
+                    }
+                }
+            }
+        });
+        txt2g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+
+                    if (a2g.equals(adadfinal)){
+                        arrayList_blit6.add(2);
+                        txt2g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        txt3g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a3g.equals(adadfinal)){
+                        arrayList_blit6.add(3);
+                        txt3g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt4g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a4g.equals(adadfinal)){
+                        arrayList_blit6.add(4);
+                        txt4g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt5g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a5g.equals(adadfinal)){
+                        arrayList_blit6.add(5);
+                        txt5g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt6g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a6g.equals(adadfinal)){
+                        arrayList_blit6.add(6);
+                        txt6g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt7g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a7g.equals(adadfinal)){
+                        arrayList_blit6.add(7);
+                        txt7g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt8g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a8g.equals(adadfinal)){
+                        arrayList_blit6.add(8);
+                        txt8g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt9g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (a9g.equals(adadfinal)){
+                        arrayList_blit6.add(9);
+                        txt9g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt10g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b1g.equals(adadfinal)){
+                        arrayList_blit6.add(10);
+                        txt10g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt11g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b2g.equals(adadfinal)){
+                        arrayList_blit6.add(11);
+                        txt11g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
+        });
+        txt12g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b3g.equals(adadfinal)){
+                        arrayList_blit6.add(12);
+                        txt12g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
+        });
+        txt13g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b4g.equals(adadfinal)){
+                        arrayList_blit6.add(13);
+                        txt13g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt14g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b5g.equals(adadfinal)){
+                        arrayList_blit6.add(14);
+                        txt14g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt15g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+
+                    if (b6g.equals(adadfinal)){
+                        arrayList_blit6.add(15);
+                        txt15g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+        txt16g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b7g.equals(adadfinal)){
+                        arrayList_blit6.add(16);
+                        txt16g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt17g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b8g.equals(adadfinal)){
+                        arrayList_blit6.add(17);
+                        txt17g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt18g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (b9g.equals(adadfinal)){
+                        arrayList_blit6.add(18);
+                        txt18g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt19g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c1g.equals(adadfinal)){
+                        arrayList_blit6.add(19);
+                        txt19g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt20g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c2g.equals(adadfinal)){
+                        arrayList_blit6.add(20);
+                        txt20g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt21g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c3g.equals(adadfinal)){
+                        arrayList_blit6.add(21);
+                        txt21g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt22g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c4g.equals(adadfinal)){
+                        arrayList_blit6.add(22);
+                        txt22g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+
+        txt23g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c5g.equals(adadfinal)){
+                        arrayList_blit6.add(23);
+                        txt23g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt24g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c6g.equals(adadfinal)){
+                        arrayList_blit6.add(24);
+                        txt24g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
+        });
+        txt25g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c7g.equals(adadfinal)){
+                        arrayList_blit6.add(25);
+                        txt25g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt26g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c8g.equals(adadfinal)){
+                        arrayList_blit6.add(26);
+                        txt26g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
+        txt27g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (blite6==false){
+                    if (c9g.equals(adadfinal)){
+                        arrayList_blit6.add(27);
+                        txt27g.setBackgroundResource(R.drawable.pushing);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+
+
+        imgpush=(ImageView)findViewById(R.id.imgpushing1_blit6);
+        imgpush2=(ImageView)findViewById(R.id.imgpushing2_blit6);
+        imgpush3=(ImageView)findViewById(R.id.imgpushing3_blit6);
+        imgpush4=(ImageView)findViewById(R.id.imgpushing4_blit6);
+        imgpush5=(ImageView)findViewById(R.id.imgpushing5_blit6);
+        imgpush6=(ImageView)findViewById(R.id.imgpushing6_blit6);
+
+        orang1_blite6=(TextView)findViewById(R.id.orang_1_blite6);
+        orang2_blite6=(TextView)findViewById(R.id.orang_2_blite6);
+        orang3_blite6=(TextView)findViewById(R.id.orang_3_blite6);
+        orang4_blite6=(TextView)findViewById(R.id.orang_4_blite6);
+        orang5_blite6=(TextView)findViewById(R.id.orang_5_blite6r);
+        orang6_blite6=(TextView)findViewById(R.id.orang_6_blite6f);
+
         orang1_blite6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (blite1==false){
-                    final BottomSheetDialog dialog = new BottomSheetDialog(play4.this, R.style.BottomSheetDialogTheme);
+                    final BottomSheetDialog dialog = new BottomSheetDialog(play6.this, R.style.BottomSheetDialogTheme);
                     dialog.setContentView(R.layout.sheet_clime);
                     dialog.setCanceledOnTouchOutside(true);
 
@@ -3649,7 +4986,7 @@ public class play4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (blite2==false){
-                    final BottomSheetDialog dialog = new BottomSheetDialog(play4.this, R.style.BottomSheetDialogTheme);
+                    final BottomSheetDialog dialog = new BottomSheetDialog(play6.this, R.style.BottomSheetDialogTheme);
                     dialog.setContentView(R.layout.sheet_clime);
                     dialog.setCanceledOnTouchOutside(true);
 
@@ -3825,7 +5162,7 @@ public class play4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (blite3==false){
-                    final BottomSheetDialog dialog = new BottomSheetDialog(play4.this, R.style.BottomSheetDialogTheme);
+                    final BottomSheetDialog dialog = new BottomSheetDialog(play6.this, R.style.BottomSheetDialogTheme);
                     dialog.setContentView(R.layout.sheet_clime);
                     dialog.setCanceledOnTouchOutside(true);
 
@@ -4003,7 +5340,7 @@ public class play4 extends AppCompatActivity {
 
                 if (blite4==false){
 
-                    final BottomSheetDialog dialog = new BottomSheetDialog(play4.this, R.style.BottomSheetDialogTheme);
+                    final BottomSheetDialog dialog = new BottomSheetDialog(play6.this, R.style.BottomSheetDialogTheme);
                     dialog.setContentView(R.layout.sheet_clime);
                     dialog.setCanceledOnTouchOutside(true);
 
@@ -4171,6 +5508,368 @@ public class play4 extends AppCompatActivity {
 
 
 
+        orang5_blite6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (blite5==false){
+
+
+                    final BottomSheetDialog dialog=new BottomSheetDialog(play6.this,R.style.BottomSheetDialogTheme);
+                    dialog.setContentView(R.layout.sheet_clime);
+                    dialog.setCanceledOnTouchOutside(true);
+
+//                case "winearlyfive":
+//                factor=0.17;
+//                break;
+//                case "winfirstline":
+//                factor=0.08;
+//                break;
+//                case "winsecondline":
+//                factor=0.08;
+//                break;
+//                case "winthirdline":
+//                factor=0.08;
+//                break;
+//                case "wincorners":
+//                factor=0.08;
+//                break;
+//                case "winfull":
+                    CardView crderly=(CardView)dialog.findViewById(R.id.crderly);
+                    CardView crdtop=(CardView)dialog.findViewById(R.id.crdtop);
+                    CardView crdbotom=(CardView)dialog.findViewById(R.id.crdbotom);
+                    CardView crdmidle=(CardView)dialog.findViewById(R.id.crdmidle);
+                    CardView crdcorn=(CardView)dialog.findViewById(R.id.crdcorner);
+                    CardView crdfull=(CardView)dialog.findViewById(R.id.crdfull);
+
+                    TextView erly=(TextView)dialog.findViewById(R.id.txterlyfive);
+                    TextView top=(TextView)dialog.findViewById(R.id.txttopline);
+                    TextView midle=(TextView)dialog.findViewById(R.id.txtmidleline);
+                    TextView botom=(TextView)dialog.findViewById(R.id.txtbotomline);
+                    TextView corn=(TextView)dialog.findViewById(R.id.txtcorneline);
+                    TextView full=(TextView)dialog.findViewById(R.id.txtfullhome);
+
+                    erly.setText(AmountText("winearlyfive"));
+                    top.setText(AmountText("winfirstline"));
+                    midle.setText(AmountText("winsecondline"));
+                    botom.setText(AmountText("winthirdline"));
+                    corn.setText(AmountText("wincorners"));
+                    full.setText(AmountText("winfull"));
+
+
+                    crderly.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (arrayList_blit5.size()==5){
+                                win("winearlyfive");
+                            }else {
+                                blite5=true;
+                                imgpush5.setBackgroundResource(R.drawable.pushing);
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+                    crdtop.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int i=0;
+                            while (i<firstline_e.size()){
+                                if (arrayList_blit5.contains( firstline_e.get(i))){
+                                    trfirst_e.add("tr");
+                                }
+                                i++;
+                            }
+
+
+
+                            if (trfirst_e.size()==firstline_e.size())
+                            {
+                                win("winfirstline");
+                            }else {
+                                blite5=true;
+                                imgpush5.setBackgroundResource(R.drawable.pushing);
+                                dialog.dismiss();
+                            }
+
+                        }
+                    });
+
+
+                    crdmidle.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            int i=0;
+                            while (i<secendlin_e.size()){
+                                if (arrayList_blit5.contains( secendlin_e.get(i))){
+                                    trsecend_e.add("tr");
+                                }
+                                i++;
+                            }
+
+
+                            if (trsecend_e.size()==secendlin_e.size())
+                            {
+                                win("winsecondline");
+
+                            }else {
+                                blite5=true;
+                                imgpush5.setBackgroundResource(R.drawable.pushing);
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+                    crdbotom.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int i=0;
+                            while (i<threeline_e.size()){
+                                if (arrayList_blit5.contains( threeline_e.get(i))){
+                                    trthree_e.add("tr");
+                                }
+                                i++;
+                            }
+
+                            if (trthree_e.size()==threeline_e.size())
+                            {
+                                win("winthirdline");
+
+                            }else {
+                                blite5=true;
+                                imgpush5.setBackgroundResource(R.drawable.pushing);
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+                    crdcorn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int i=0;
+                            while (i<corner_e.size()){
+                                if (arrayList_blit5.contains( corner_e.get(i))){
+                                    tr_corner_e.add("tr");
+                                }
+                                i++;
+                            }
+
+                            if (tr_corner_e.size()==corner_e.size()){
+                                win("wincorners");
+
+                            }else {
+                                blite5=true;
+                                imgpush5.setBackgroundResource(R.drawable.pushing);
+                                dialog.dismiss();
+                            }
+
+
+                        }
+                    });
+
+                    crdfull.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (trfirst_e.size()==firstline_e.size()&&trsecend_e.size()==secendlin_e.size()&&trthree_e.size()==threeline_e.size()) {
+                                win("winfull");
+
+                            }else {
+                                blite5=true;
+                                imgpush5.setBackgroundResource(R.drawable.pushing);
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+
+
+                    dialog.show();
+                }
+            }
+        });
+
+
+
+
+
+        orang6_blite6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (blite6==false){
+
+
+                final BottomSheetDialog dialog=new BottomSheetDialog(play6.this,R.style.BottomSheetDialogTheme);
+                dialog.setContentView(R.layout.sheet_clime);
+                dialog.setCanceledOnTouchOutside(true);
+
+//                case "winearlyfive":
+//                factor=0.17;
+//                break;
+//                case "winfirstline":
+//                factor=0.08;
+//                break;
+//                case "winsecondline":
+//                factor=0.08;
+//                break;
+//                case "winthirdline":
+//                factor=0.08;
+//                break;
+//                case "wincorners":
+//                factor=0.08;
+//                break;
+//                case "winfull":
+                CardView crderly=(CardView)dialog.findViewById(R.id.crderly);
+                CardView crdtop=(CardView)dialog.findViewById(R.id.crdtop);
+                CardView crdbotom=(CardView)dialog.findViewById(R.id.crdbotom);
+                CardView crdmidle=(CardView)dialog.findViewById(R.id.crdmidle);
+                CardView crdcorn=(CardView)dialog.findViewById(R.id.crdcorner);
+                CardView crdfull=(CardView)dialog.findViewById(R.id.crdfull);
+
+                TextView erly=(TextView)dialog.findViewById(R.id.txterlyfive);
+                TextView top=(TextView)dialog.findViewById(R.id.txttopline);
+                TextView midle=(TextView)dialog.findViewById(R.id.txtmidleline);
+                TextView botom=(TextView)dialog.findViewById(R.id.txtbotomline);
+                TextView corn=(TextView)dialog.findViewById(R.id.txtcorneline);
+                TextView full=(TextView)dialog.findViewById(R.id.txtfullhome);
+
+                erly.setText(AmountText("winearlyfive"));
+                top.setText(AmountText("winfirstline"));
+                midle.setText(AmountText("winsecondline"));
+                botom.setText(AmountText("winthirdline"));
+                corn.setText(AmountText("wincorners"));
+                full.setText(AmountText("winfull"));
+
+
+                crderly.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (arrayList_blit6.size()==5){
+                            win("winearlyfive");
+                        }else {
+                            blite6=true;
+                            imgpush6.setBackgroundResource(R.drawable.pushing);
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+                crdtop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int i=0;
+                        while (i<firstline_g.size()){
+                            if (arrayList_blit6.contains( firstline_g.get(i))){
+                                trfirst_g.add("tr");
+                            }
+                            i++;
+                        }
+
+
+
+                        if (trfirst_g.size()==firstline_g.size())
+                        {
+                            win("winfirstline");
+                        }else {
+                            blite6=true;
+                            imgpush6.setBackgroundResource(R.drawable.pushing);
+                            dialog.dismiss();
+                        }
+
+                    }
+                });
+
+
+                crdmidle.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        int i=0;
+                        while (i<secendlin_g.size()){
+                            if (arrayList_blit6.contains( secendlin_g.get(i))){
+                                trsecend_g.add("tr");
+                            }
+                            i++;
+                        }
+
+
+                        if (trsecend_g.size()==secendlin_g.size())
+                        {
+                            win("winsecondline");
+                        }else {
+                            blite6=true;
+                            imgpush6.setBackgroundResource(R.drawable.pushing);
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+                crdbotom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int i=0;
+                        while (i<threeline_g.size()){
+                            if (arrayList_blit6.contains( threeline_g.get(i))){
+                                trthree_g.add("tr");
+                            }
+                            i++;
+                        }
+
+                        if (trthree_g.size()==threeline_g.size())
+                        {
+                            win("winthirdline");
+                        }else {
+                            blite6=true;
+                            imgpush6.setBackgroundResource(R.drawable.pushing);
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+                crdcorn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int i=0;
+                        while (i<corner_g.size()){
+                            if (arrayList_blit6.contains( corner_g.get(i))){
+                                tr_corner_g.add("tr");
+                            }
+                            i++;
+                        }
+
+                        if (tr_corner_g.size()==corner_g.size()){
+                            win("wincorners");
+                        }else {
+                            blite6=true;
+                            imgpush6.setBackgroundResource(R.drawable.pushing);
+                            dialog.dismiss();
+                        }
+
+
+                    }
+                });
+
+                crdfull.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (trfirst_g.size()==firstline_g.size()&&trsecend_g.size()==secendlin_g.size()&&trthree_g.size()==threeline_g.size()) {
+                            win("winfull");
+                        }else {
+                            blite6=true;
+                            imgpush6.setBackgroundResource(R.drawable.pushing);
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+
+
+                dialog.show();
+                }
+            }
+        });
+
     }
     @Override
     protected void onDestroy() {
@@ -4222,7 +5921,7 @@ public class play4 extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e("stuf", error.toString() );
                 //dialogpross.dismiss();
-                Toast.makeText(play4.this, error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(play6.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         })
         {
@@ -4341,7 +6040,7 @@ public class play4 extends AppCompatActivity {
                     case "winfull":
                         Toast.makeText(this, "Win full home faild", Toast.LENGTH_SHORT).show();
                         break;
-                }}
+            }}
         } catch (JSONException e) {
             Log.e("kosrtr", e.toString());
             e.printStackTrace();
@@ -4355,8 +6054,8 @@ public class play4 extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        com.example.tambola.play4.this.finish();
-                        Toast.makeText(play4.this, "Game Over", Toast.LENGTH_SHORT).show();
+                        com.example.tambola.play6.this.finish();
+                        Toast.makeText(play6.this, "Game Over", Toast.LENGTH_SHORT).show();
 
                     }
                 },10000);
@@ -4368,13 +6067,6 @@ public class play4 extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-//
-
-
-//        }
-//    }
-//
-
 //    public void Cornerwin(){
 //
 //
@@ -4410,7 +6102,20 @@ public class play4 extends AppCompatActivity {
 //            id++;
 //        }
 //
-//
+//        int ie=0;
+//        while (ib<corner_e.size()){
+//            if (arrayList_blit5.contains( corner_e.get(ie))){
+//                tr_corner_e.add("tr");
+//            }
+//            ie++;
+//        }
+//        int ig=0;
+//        while (ib<corner_g.size()){
+//            if (arrayList_blit6.contains( corner_g.get(ig))){
+//                tr_corner_g.add("tr");
+//            }
+//            ig++;
+//        }
 //
 //        if (tr_corner_a.size()==corner_a.size()){
 //            win("wincorners");
@@ -4427,9 +6132,13 @@ public class play4 extends AppCompatActivity {
 //        else if (tr_corner_d.size()==corner_d.size()){
 //            win("wincorners");
 //        }
+//        else if (tr_corner_e.size()==corner_e.size()){
+//            win("wincorners");
+//        }
 //
-//
-//
+//        else if (tr_corner_g.size()==corner_g.size()){
+//            win("wincorners");
+//        }
 //    }
 //    public void Erlyfivewin(){
 //        if (arrayList_blit1.size()==5){
@@ -4439,6 +6148,10 @@ public class play4 extends AppCompatActivity {
 //        }else if (arrayList_blit3.size()==5){
 //            win("winearlyfive");
 //        }else if (arrayList_blit4.size()==5){
+//            win("winearlyfive");
+//        }else if (arrayList_blit5.size()==5){
+//            win("winearlyfive");
+//        }else if (arrayList_blit6.size()==5){
 //            win("winearlyfive");
 //        }
 //    }
@@ -4476,8 +6189,20 @@ public class play4 extends AppCompatActivity {
 //            id++;
 //        }
 //
-//
-//
+//        int ie=0;
+//        while (ib<firstline_e.size()){
+//            if (arrayList_blit5.contains( firstline_e.get(ie))){
+//                trfirst_e.add("tr");
+//            }
+//            ie++;
+//        }
+//        int ig=0;
+//        while (ib<firstline_g.size()){
+//            if (arrayList_blit6.contains( firstline_g.get(ig))){
+//                trfirst_g.add("tr");
+//            }
+//            ig++;
+//        }
 //
 //        if (trfirst_a.size()==firstline_a.size())
 //        {
@@ -4492,8 +6217,12 @@ public class play4 extends AppCompatActivity {
 //        else if (trfirst_d.size()==firstline_d.size()){
 //            win("winfirstline");
 //        }
-//
-//
+//        else if (trfirst_e.size()==firstline_e.size()){
+//            win("winfirstline");
+//        }
+//        else if (trfirst_g.size()==firstline_g.size()){
+//            win("winfirstline");
+//        }
 //    }
 //    public void Secendlinewin(){
 //
@@ -4530,7 +6259,20 @@ public class play4 extends AppCompatActivity {
 //            id++;
 //        }
 //
-//
+//        int ie=0;
+//        while (ib<secendlin_e.size()){
+//            if (arrayList_blit5.contains( secendlin_e.get(ie))){
+//                trsecend_e.add("tr");
+//            }
+//            ie++;
+//        }
+//        int ig=0;
+//        while (ib<secendlin_g.size()){
+//            if (arrayList_blit6.contains( secendlin_g.get(ig))){
+//                trsecend_g.add("tr");
+//            }
+//            ig++;
+//        }
 //
 //
 //        if (trsecend_a.size()==secendline_a.size())
@@ -4544,7 +6286,12 @@ public class play4 extends AppCompatActivity {
 //            win("winsecondline");
 //        }else if (trsecend_d.size()==secendlin_d.size()){
 //            win("winsecondline");
+//        }else if (trsecend_e.size()==secendlin_e.size()){
+//            win("winsecondline");
+//        }else if (trsecend_g.size()==secendlin_g.size()){
+//            win("winsecondline");
 //        }
+//
 //    }
 //    public void Threelinewin(){
 //
@@ -4581,7 +6328,20 @@ public class play4 extends AppCompatActivity {
 //            id++;
 //        }
 //
-//
+//        int ie=0;
+//        while (ib<threeline_e.size()){
+//            if (arrayList_blit5.contains( threeline_e.get(ie))){
+//                trthree_e.add("tr");
+//            }
+//            ie++;
+//        }
+//        int ig=0;
+//        while (ib<threeline_g.size()){
+//            if (arrayList_blit6.contains( threeline_g.get(ig))){
+//                trthree_g.add("tr");
+//            }
+//            ig++;
+//        }
 //
 //
 //        if (trthree_a.size()==threeline_a.size())
@@ -4597,7 +6357,11 @@ public class play4 extends AppCompatActivity {
 //        else if (trthree_d.size()==threeline_d.size()){
 //            win("winthirdline");
 //        }
-//
+//        else if (trthree_e.size()==threeline_e.size()){
+//            win("winthirdline");
+//        }else if (trthree_g.size()==threeline_g.size()){
+//            win("winthirdline");
+//        }
 //    }
 //    public void Fullewin() {
 //
@@ -4613,6 +6377,12 @@ public class play4 extends AppCompatActivity {
 //        else if (trfirst_d.size()==firstline_d.size()&&trsecend_d.size()==secendlin_d.size()&&trthree_d.size()==threeline_d.size()) {
 //            win("winfull");
 //        }
+//        else if (trfirst_e.size()==firstline_e.size()&&trsecend_e.size()==secendlin_e.size()&&trthree_e.size()==threeline_e.size()){
+//            win("winfull");
+//        }
+//        else if (trfirst_g.size()==firstline_g.size()&&trsecend_g.size()==secendlin_g.size()&&trthree_g.size()==threeline_g.size()){
+//            win("winfull");
+//        }
 //
 //    }
     public static Bitmap getBitmap(String encodedImage)
@@ -4620,6 +6390,8 @@ public class play4 extends AppCompatActivity {
         byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
         return (BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length));
     }
+
+
     public void getrandomnumber(){
         Random rand2 = new Random();
         int a=rand2.nextInt(90)+1;
@@ -4653,6 +6425,8 @@ public class play4 extends AppCompatActivity {
 //        }
 //
 //    }
+//
+
 
     public String AmountText(String key){
         try {
@@ -4706,7 +6480,6 @@ public class play4 extends AppCompatActivity {
 
 
 
-
     public void generaterandom(int i,ArrayList<String> adad){
         int random= new Random().nextInt(9)+1;
         if (adad.size()==0){
@@ -4724,26 +6497,26 @@ public class play4 extends AppCompatActivity {
         }
 
     }
-    public void generateadadasli(int random,String position,int i){
-        int random2=new Random().nextInt(10)+1;
-        String adadasli= String.valueOf(((random-1)*10)+random2);
+    public void generateadadasli(int random,String position,int i) {
+        int random2 = new Random().nextInt(10) + 1;
+        String adadasli = String.valueOf(((random - 1) * 10) + random2);
         if (ticketNumber.contains(adadasli)) {
-            generateadadasli(random,position,i);
-        }else {
+            generateadadasli(random, position, i);
+        } else {
             ticketNumber.add(adadasli);
-            JSONObject jsonObject=new JSONObject();
+            JSONObject jsonObject = new JSONObject();
             try {
-                jsonObject.put("position",String.valueOf(random));
-                jsonObject.put("number",adadasli);
-                jsonObject.put("ticketNo",String.valueOf((i/3)+1));
-                jsonObject.put("row",String.valueOf((i%3)+1));
+                jsonObject.put("position", String.valueOf(random));
+                jsonObject.put("number", adadasli);
+                jsonObject.put("ticketNo", String.valueOf((i / 3) + 1));
+                jsonObject.put("row", String.valueOf((i % 3) + 1));
                 jsonlist.put(jsonObject);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Log.e("position", "position : "+position+"\n"+"adad : "+adadasli );
+            Log.e("position", "position : " + position + "\n" + "adad : " + adadasli);
 
-            switch (position){
+            switch (position) {
                 case "1":
                     txt1.setText(adadasli);
                     firstline_a.add(1);
@@ -5277,19 +7050,295 @@ public class play4 extends AppCompatActivity {
 
 
 
+                case "109":
+                    txt1e.setText(adadasli);
+                    firstline_e.add(109);
+                    corner_e.add(109);
+                    break;
+
+                case "110":
+                    txt2e.setText(adadasli);
+                    firstline_e.add(110);
+                    break;
+
+                case "111":
+                    txt3e.setText(adadasli);
+                    firstline_e.add(111);
+                    break;
+
+                case "112":
+                    txt4e.setText(adadasli);
+                    firstline_e.add(112);
+                    break;
+
+                case "113":
+                    txt5e.setText(adadasli);
+                    firstline_e.add(113);
+                    break;
+
+                case "114":
+                    txt6e.setText(adadasli);
+                    firstline_e.add(114);
+                    break;
+
+                case "115":
+                    txt7e.setText(adadasli);
+                    firstline_e.add(115);
+                    break;
+
+                case "116":
+                    txt8e.setText(adadasli);
+                    firstline_e.add(116);
+                    break;
+
+                case "117":
+                    txt9e.setText(adadasli);
+                    firstline_e.add(117);
+                    corner_e.add(117);
+                    break;
+
+                case "118":
+                    txt10e.setText(adadasli);
+                    secendlin_e.add(118);
+                    break;
+
+                case "119":
+                    txt11e.setText(adadasli);
+                    secendlin_e.add(119);
+                    break;
+
+                case "120":
+                    txt12e.setText(adadasli);
+                    secendlin_e.add(120);
+                    break;
+
+                case "121":
+                    txt13e.setText(adadasli);
+                    secendlin_e.add(121);
+                    break;
+
+                case "122":
+                    txt14e.setText(adadasli);
+                    secendlin_e.add(122);
+                    break;
+
+                case "123":
+                    txt15e.setText(adadasli);
+                    secendlin_e.add(123);
+                    break;
+
+                case "124":
+                    txt16e.setText(adadasli);
+                    secendlin_e.add(124);
+                    break;
+
+                case "125":
+                    txt17e.setText(adadasli);
+                    secendlin_e.add(125);
+                    break;
+
+                case "126":
+                    txt18e.setText(adadasli);
+                    secendlin_e.add(126);
+                    break;
+
+                case "127":
+                    txt19e.setText(adadasli);
+                    threeline_e.add(127);
+                    corner_e.add(127);
+                    break;
+
+                case "128":
+                    txt20e.setText(adadasli);
+                    threeline_e.add(128);
+                    break;
+
+                case "129":
+                    txt21e.setText(adadasli);
+                    threeline_e.add(129);
+                    break;
+
+                case "130":
+                    txt22e.setText(adadasli);
+                    threeline_e.add(130);
+                    break;
+
+                case "131":
+                    txt23e.setText(adadasli);
+                    threeline_e.add(131);
+                    break;
+
+                case "132":
+                    txt24e.setText(adadasli);
+                    threeline_e.add(132);
+                    break;
+
+                case "133":
+                    txt25e.setText(adadasli);
+                    threeline_e.add(133);
+                    break;
+
+                case "134":
+                    txt26e.setText(adadasli);
+                    threeline_e.add(134);
+                    break;
+
+                case "135":
+                    txt27e.setText(adadasli);
+                    threeline_e.add(135);
+                    corner_e.add(135);
+                    break;
+
+
+
+
+
+
+                case "136":
+                    txt1g.setText(adadasli);
+                    firstline_g.add(136);
+                    corner_g.add(136);
+                    break;
+
+                case "137":
+                    txt2g.setText(adadasli);
+                    firstline_g.add(137);
+                    break;
+
+                case "138":
+                    txt3g.setText(adadasli);
+                    firstline_g.add(138);
+                    break;
+
+                case "139":
+                    txt4g.setText(adadasli);
+                    firstline_g.add(139);
+                    break;
+
+                case "140":
+                    txt5g.setText(adadasli);
+                    firstline_g.add(140);
+                    break;
+
+                case "141":
+                    txt6g.setText(adadasli);
+                    firstline_g.add(141);
+                    break;
+
+                case "142":
+                    txt7g.setText(adadasli);
+                    firstline_g.add(142);
+                    break;
+
+                case "143":
+                    txt8g.setText(adadasli);
+                    firstline_g.add(143);
+                    break;
+
+                case "144":
+                    txt9g.setText(adadasli);
+                    firstline_g.add(144);
+                    corner_g.add(144);
+                    break;
+
+                case "145":
+                    txt10g.setText(adadasli);
+                    secendlin_g.add(145);
+                    break;
+
+                case "146":
+                    txt11g.setText(adadasli);
+                    secendlin_g.add(146);
+                    break;
+
+                case "147":
+                    txt12g.setText(adadasli);
+                    secendlin_g.add(147);
+                    break;
+
+                case "148":
+                    txt13g.setText(adadasli);
+                    secendlin_g.add(148);
+                    break;
+
+                case "149":
+                    txt14g.setText(adadasli);
+                    secendlin_g.add(149);
+                    break;
+
+                case "150":
+                    txt15g.setText(adadasli);
+                    secendlin_g.add(150);
+                    break;
+
+                case "151":
+                    txt16g.setText(adadasli);
+                    secendlin_g.add(151);
+                    break;
+
+                case "152":
+                    txt17g.setText(adadasli);
+                    secendlin_g.add(152);
+                    break;
+
+                case "153":
+                    txt18g.setText(adadasli);
+                    secendlin_g.add(153);
+                    break;
+
+                case "154":
+                    txt19g.setText(adadasli);
+                    threeline_g.add(154);
+                    corner_g.add(154);
+                    break;
+
+                case "155":
+                    txt20g.setText(adadasli);
+                    threeline_g.add(155);
+                    break;
+
+                case "156":
+                    txt21g.setText(adadasli);
+                    threeline_g.add(156);
+                    break;
+
+                case "157":
+                    txt22g.setText(adadasli);
+                    threeline_g.add(157);
+                    break;
+
+                case "158":
+                    txt23g.setText(adadasli);
+                    threeline_g.add(158);
+                    break;
+
+                case "159":
+                    txt24g.setText(adadasli);
+                    threeline_g.add(159);
+                    break;
+
+                case "160":
+                    txt25g.setText(adadasli);
+                    threeline_g.add(160);
+                    break;
+
+                case "161":
+                    txt26g.setText(adadasli);
+                    threeline_g.add(161);
+                    break;
+
+                case "162":
+                    txt27g.setText(adadasli);
+                    threeline_g.add(162);
+                    corner_g.add(162);
+                    break;
+
+
+
+
+
             }
         }
-
     }
-
-
-
-
-
-
-
-
-
-
 
 }

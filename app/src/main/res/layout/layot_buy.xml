@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@drawable/bottomsh"
-
     android:layout_height="match_parent">
 
   <ImageView
@@ -25,7 +24,10 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/asdfghj"
         android:drawableLeft="@drawable/sece"
-        android:padding="5dp"
+      android:padding="3dp"
+        android:gravity="left"
+        android:textColor="#000"
+        android:textSize="14dp"
         android:drawablePadding="3dp"
         android:background="@drawable/backtxtbuy"
         />
@@ -49,6 +51,7 @@
       android:drawableLeft="@drawable/sece"
       android:padding="5dp"
       android:gravity="left"
+      android:inputType="number"
       android:background="@drawable/backtxtbuy"
       />
 
@@ -81,6 +84,7 @@
       android:layout_below="@+id/oioiioio"
       android:drawableLeft="@drawable/sece"
       android:padding="5dp"
+      android:inputType="number    "
       android:gravity="left"
       android:background="@drawable/backtxtbuy"
       />
